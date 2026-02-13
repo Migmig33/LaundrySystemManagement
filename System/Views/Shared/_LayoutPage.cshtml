@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body ng-app="app" ng-controller="controller">
+    <style>
+        body {
+            font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            font-weight: 400;
+            color-scheme: light dark;
+            background-color: #136dc0;
+            font-synthesis: none;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+
+
+        }
+          @@keyframes FadeIn{
+           from{
+               opacity: 0;
+               transform: translateY(-2px); 
+               
+           }
+           to{
+               opacity: 1;
+               transform: translateY(1px);
+           }
+       }
+          @@keyframes FadeOut{
+              from{
+                  opacity: 1;
+
+              }
+              to{
+                  opacity: 0;
+              }
+          }
+    </style>
+    <div>
+        @RenderBody()
+    </div>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/jquery-3.7.0.min.js"></script>
+    <script src="~/Scripts/scripts/ModuleScript.js"></script>
+    <script src="~/Scripts/scripts/ServiceScript.js"></script>
+    <script src="~/Scripts/scripts/ControllerScript.js"></script>
+
+</body>
+</html>

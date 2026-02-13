@@ -1,0 +1,44 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<div ng-init="getData()">
+    <div  class="min-h-screen flex items-center justify-center text-white" >
+        <div class="w-full max-w-[420px] p-8"  style="animation: FadeIn 1s ease-in-out">
+            <h1 class="text-3xl font-bold text-center mb-8">
+                Login to Washed Up
+            </h1>
+
+            <div class="flex flex-col gap-4">
+                <div class="flex flex-col gap-1">
+                    <label for="loggedUsername" class="text-sm-center font-meduim">Username: </label>
+                    <input type="text"
+                           class="validate rounded-md bg-transparent border border-white-600 p-3 focus:outline-none focus:border-white"
+                           ng-model="loggedUsername"
+                           placeholder="juan@gmail.com"/>
+                    <label for="loggedPassword">Password: </label>
+                    <input type="text"
+                           class="validate rounded-md bg-transparent border border-white-600 p-3 focus:outline-none focus:border-white"
+                           ng-model="loggedPassword"
+                           placeholder="juan123.."/>
+
+
+                </div>
+                <div class="flex flex-col gap-3">
+                    <input type="submit"
+                           value="Log in"
+                           class="rounded-full bg-white text-black font-bold border p-3 border-transparent transform hover:scale-105 transistion duration-300"
+                           ng-click="loginFunction()" />
+                    <input type="submit"
+                           value="Cancel"
+                           class="rounded-full bg-[#FF0000] text-black font-bold p-3 border border-transparent transform hover:scale-105 transistion duration-300"
+                           ng-click="cancelLogin()"/>
+                </div>
+            </div>
+           
+        </div>
+       
+    </div>
+  
+
+</div>
+
