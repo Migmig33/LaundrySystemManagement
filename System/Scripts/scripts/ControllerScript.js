@@ -9,6 +9,11 @@
             "Username": $scope.Username,
             "Password": $scope.Password
         }
+        Swal.fire({
+            title: "Success!",
+            text: "Customer Successfully Added!",
+            icon: "success"
+        });
         $scope.customerArray.push(customerData);
         $scope.checkDatas();
     }
@@ -44,13 +49,12 @@
     $scope.directLogin = function () {
         var storedData = JSON.stringify($scope.customerArray);
         sessionStorage.setItem("UserArray", storedData);
-        window.location.href = "/SystemView/Login";
+        $scope.redirectFunctions(1);
     }
     $scope.getData = function () {
         var userDatas = sessionStorage.getItem("UserArray");
         var storedJSONs = JSON.parse(userDatas);
         $scope.customerArray = storedJSONs;
-
 
 
     }
@@ -59,15 +63,37 @@
         $scope.loggedPassword = " ";
     }
 
+    $scope.redirectFunctions = function (number) {
+        switch (number){
+            case 1:
+                return window.location.href = "/SystemView/Login";
+            case 2:
+                return window.location.href = "/SystemView/Registration";
+            case 3:
+                return window.location.href = "/SystemView/Home";
+            default:
+                return null;
+        }
+
+    }
+
 
     $scope.loginFunction = function () {
         var checkLogin = $scope.customerArray.find(
             items => items.Username == $scope.loggedUsername && items.Password == $scope.loggedPassword);
         if (checkLogin != undefined) {
-            alert("logged in");
-            window.location.href = "/SystemView/Home";
+            Swal.fire({
+                title: "Success!",
+                text: "You Have Logged In!",
+                icon: "success"
+            });
+            $scope.redirectFunctions(3);
         } else {
-            alert("TS NOT WORKING");
+            Swal.fire({
+                icon: "error",
+                title: "Invalid",
+                text: "Wrong Username or Password!",
+            });
         }
 
     }

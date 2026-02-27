@@ -2,27 +2,55 @@
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
 }
 
-<div ng-init="checkDatas()"
-<h1>Welcome to homescreen</h1>
+<div ng-init="getData()">
+    <div class="min-h-screen flex justify-center text-white">
+        <div class="w-full  p-8" style="animation: FadeIn 1s ease-in-out">
+            <h1 class="text-3xl font-bold text-center mb-8">Welcome <span>{{}}</span></h1>
+            <div class="flex justify-center items-center gap-2 mb-8">
+                <div class="flex flex-col gap-4">
+                    <div class="bg-black text-white p-3">
+                        <h1 class="text-center text-xl font-bold">Total Customer</h1>
+                        <p class="text-center text-xl font-bold">0</p>
+                    </div>
 
-<table border="1" cellspacing="10">
-    <tr>
-        <th>Names</th>
-        <th>Username</th>
-        <th>Password</th>
-        <th>Action</th>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <div class="bg-black text-white p-3">
+                        <h1 class="text-center text-xl font-bold">Total Customer</h1>
+                        <p class="text-center text-xl font-bold">0</p>
+                    </div>
 
-    </tr>
-    <tr ng-repeat="customer in customerArray">
-        <td>{{customer.Names}}</td>
-        <td>{{customer.Username}}</td>
-        <td>{{customer.Password}}</td>
-        <td>
-            <button ng-click="updateFunction($index)">Update</button>
-            <button ng-click="deleteFunction($index)">Delete</button>
-        </td>
-    </tr>
+                </div>
+
+            </div>
+            <div class="flex flex-col items-center gap-1">
+                <div class="rounded-md border border-transparent w-full">
+                    <table border="1" cellspacing="10" cellpadding="10" class="w-full text-center text-black font-md">
+                        <tr class="bg-[#67bed9] rounded-tr-full text-lg">
+                            <th>Names</th>
+                            <th>Username</th>
+                            <th>Password</th>
+                            <th>Action</th>
 
 
-</table>
+                        </tr>
+                        <tr ng-repeat="customer in customerArray" class="bg-[#F5EBF5] text-lg">
+                            <td>{{customer.Name}}</td>
+                            <td>{{customer.Username}}</td>
+                            <td>{{customer.Password}}</td>
+                            <td class="flex gap-4 items-center justify-center">
+                                <button ng-click="updateFunction($index)" class="rounded-full border border-transparent bg-[#FFFF00] font-bold text-black p-3 transform hover:scale-105 transition duration-300">Update</button>
+                                <button ng-click="deleteFunction($index)" class="rounded-full border border-transparent bg-[#F00] font-bold text-black p-3 transform hover:scale-105 transition duration-300 ">Delete</button>
+                            </td>
+                        </tr>
+
+
+                    </table>
+                </div>
+             
+            </div>
+     
+        </div>
+    </div>
 </div>
+      
