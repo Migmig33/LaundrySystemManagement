@@ -9,6 +9,10 @@ namespace System.Controllers
     public class SystemViewController : Controller
     {
         // GET: SystemView
+        public ActionResult Index()
+        {
+            return View();
+        }
         public ActionResult Registration()
         {
             return View();
@@ -21,5 +25,6 @@ namespace System.Controllers
         {
             return View();
         }
+
     }
 }

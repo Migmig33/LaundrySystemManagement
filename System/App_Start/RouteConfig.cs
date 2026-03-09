@@ -16,7 +16,7 @@ namespace System
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "SystemView", action = "Registration", id = UrlParameter.Optional }
+                defaults: new { controller = "SystemView", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

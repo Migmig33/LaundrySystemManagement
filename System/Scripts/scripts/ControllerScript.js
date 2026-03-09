@@ -4,18 +4,42 @@
     $scope.customerArray = [];
 
     $scope.addFunction = function () {
-        var customerData = {
-            "Name": $scope.Name,
-            "Username": $scope.Username,
-            "Password": $scope.Password
+
+        $scope.NameField = false;
+        $scope.ContactField = false;
+        $scope.RoleField = false;
+        $scope.UsernameField = false;
+        $scope.PasswordField = false;
+        hasError = false;
+        if (!$scope.Name || $scope.Name.trim() === ""){$scope.NameField = true; hasError = true;}
+        if (!$scope.Contact || $scope.Contact.trim() === ""){$scope.ContactField = true; hasError = true;}
+        if (!$scope.RoleID || $scope.RoleID.trim() === "") {$scope.RoleField = true; hasError = true;}
+        if (!$scope.Username || $scope.Username.trim() === ""){$scope.UsernameField = true; hasError = true;}
+        if (!$scope.Password || $scope.Password.trim() === ""){$scope.PasswordField = true; hasError = true;}
+        if (hasError) {
+            Swal.fire({
+                title: "Invalid",
+                text: "Please Fill the field",
+                icon: "error"
+            });
+        } else {
+            var customerData = {
+                "Name": $scope.Name,
+                "Contact": $scope.Contact,
+                "Address": $scope.Address,
+                "RoleID": $scope.RoleID,
+                "Username": $scope.Username,
+                "Password": $scope.Password
+            }
+            Swal.fire({
+                title: "Success!",
+                text: "Customer Successfully Added!",
+                icon: "success"
+            });
+            $scope.customerArray.push(customerData);
+            $scope.checkDatas();
         }
-        Swal.fire({
-            title: "Success!",
-            text: "Customer Successfully Added!",
-            icon: "success"
-        });
-        $scope.customerArray.push(customerData);
-        $scope.checkDatas();
+       
     }
 
     $scope.removeFunction = function () {
@@ -49,7 +73,7 @@
     $scope.directLogin = function () {
         var storedData = JSON.stringify($scope.customerArray);
         sessionStorage.setItem("UserArray", storedData);
-        $scope.redirectFunctions(1);
+        $scope.redirectFunc(1);
     }
     $scope.getData = function () {
         var userDatas = sessionStorage.getItem("UserArray");
@@ -63,7 +87,7 @@
         $scope.loggedPassword = " ";
     }
 
-    $scope.redirectFunctions = function (number) {
+    $scope.redirectFunc = function (number) {
         switch (number){
             case 1:
                 return window.location.href = "/SystemView/Login";
@@ -71,11 +95,14 @@
                 return window.location.href = "/SystemView/Registration";
             case 3:
                 return window.location.href = "/SystemView/Home";
+            case 4:
+                return window.location.href = "/SystemView/Index";
             default:
                 return null;
         }
 
     }
+    
 
 
     $scope.loginFunction = function () {
@@ -87,7 +114,7 @@
                 text: "You Have Logged In!",
                 icon: "success"
             });
-            $scope.redirectFunctions(3);
+            $scope.redirectFunc(3);
         } else {
             Swal.fire({
                 icon: "error",

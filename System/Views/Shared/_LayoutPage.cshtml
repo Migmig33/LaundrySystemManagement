@@ -9,18 +9,32 @@
 </head>
 <body ng-app="app" ng-controller="controller">
     <style>
+        :root {
+            --bg: #EDF4FB;
+            --surface: #FFFFFF;
+            --card: #F0F7FF;
+            --primary: #1A6FD4;
+            --primary-light: #3D8EF0;
+            --primary-dark: #0D4FA0;
+            --accent: #00C2A8;
+            --accent2: #F5A623;
+            --muted: #6B8DB5;
+            --text: #0D2D52;
+            --text-sub: #4A6990;
+            --border: #C8DDF5;
+            --danger: #E8445A;
+            --success: #22C472;
+        }
         body {
             font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
             line-height: 1.5;
             font-weight: 400;
             color-scheme: light dark;
-            background-color: #136dc0;
+            background-color: #EDF4FB;
             font-synthesis: none;
             text-rendering: optimizeLegibility;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-
-
         }
           @@keyframes FadeIn{
            from{
@@ -42,10 +56,44 @@
                   opacity: 0;
               }
           }
+          @@keyframes SlideDown{
+              from{
+                  opacity: 0;
+                  transform: translateY(-50px);
+              }
+              to{
+                  opacity: 1;
+                  transform: translateY(1px);
+              }
+          }
+          @@keyframes SlideLeft{
+              from{
+                  opacity: 0;
+                  transform: translateX(-50px);
+
+              }
+              to{
+                 opacity: 1;
+                 transform: translateY(1px);
+              }
+          }
     </style>
-    <div>
+    <nav class="flex bg-[var(--primary)] p-3 border font-bold text-3xl cursor-pointer "
+         style="animation: SlideDown 0.5s ease-in-out">
+        <div class="flex">
+            <h1 class=" text-[var(--text)] transform hover:scale-105 transistion duration-300" style="animation: SlideLeft 0.8s ease-in-out">launder</h1><span class="text-[var(--bg)]" style="animation: SlideDown 2s ease-in-out">Track</span>
+        </div>
+        
+    </nav>
+    <div style="animation: FadeIn 2s ease-in-out">
         @RenderBody()
     </div>
+    <footer class="border-t border-black m-4">
+        <p class="text-sm text-black text-center m-4">
+            launderTrack - @@2026 Miguel Andrei Tan. All Rights Reserved.
+        </p>
+      
+    </footer>
     <script src="~/Scripts/angular.min.js"></script>
     <script src="~/Scripts/jquery-3.7.0.min.js"></script>
     <script src="~/Scripts/scripts/ModuleScript.js"></script>

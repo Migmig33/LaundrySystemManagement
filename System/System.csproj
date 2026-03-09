@@ -972,6 +972,7 @@
     <Content Include="Views\SystemView\Registration.cshtml" />
     <Content Include="Views\SystemView\Login.cshtml" />
     <Content Include="Views\SystemView\Home.cshtml" />
+    <Content Include="Views\SystemView\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
