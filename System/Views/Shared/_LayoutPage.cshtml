@@ -6,6 +6,8 @@
     <title>@ViewBag.Title</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body ng-app="app" ng-controller="controller">
     <style>
@@ -25,6 +27,7 @@
             --danger: #E8445A;
             --success: #22C472;
         }
+
         body {
             font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
             line-height: 1.5;
@@ -36,69 +39,104 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
-          @@keyframes FadeIn{
-           from{
-               opacity: 0;
-               transform: translateY(-2px); 
-               
-           }
-           to{
-               opacity: 1;
-               transform: translateY(1px);
-           }
-       }
-          @@keyframes FadeOut{
-              from{
-                  opacity: 1;
 
-              }
-              to{
-                  opacity: 0;
-              }
-          }
-          @@keyframes SlideDown{
-              from{
-                  opacity: 0;
-                  transform: translateY(-50px);
-              }
-              to{
-                  opacity: 1;
-                  transform: translateY(1px);
-              }
-          }
-          @@keyframes SlideLeft{
-              from{
-                  opacity: 0;
-                  transform: translateX(-50px);
+        @@keyframes FadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-2px);
+            }
 
-              }
-              to{
-                 opacity: 1;
-                 transform: translateY(1px);
-              }
-          }
+            to {
+                opacity: 1;
+                transform: translateY(1px);
+            }
+        }
+
+        @@keyframes FadeOut {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
+
+        @@keyframes SlideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(1px);
+            }
+        }
+
+        @@keyframes SlideLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(1px);
+            }
+        }
+
+        .boxShadow {
+            box-shadow: -6px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .mainContainer {
+            margin-left: calc(25% + 20px);
+            margin-top: calc(5% + 5px);
+        }
+        @@media(max-width: 480px){
+            .sideBarContainer {
+                left: -70%;
+                transition: 0.5s ease-in-out;
+            }
+
+            .sideBarContainer.show{
+                left: 0;
+                width: 70%;
+                
+            }
+            .mainContainer {
+                margin-left: 0;
+                margin-top: calc(15% + 10px);
+            }
+        }
     </style>
-    <nav class="flex bg-[var(--primary)] p-3 border font-bold text-3xl cursor-pointer "
-         style="animation: SlideDown 0.5s ease-in-out">
+    <nav class="fixed top-0 w-full bg-[var(--primary)] p-3 font-bold text-3xl cursor-pointer h-[10%] z-20 "
+         style="animation: SlideDown 0.5s ease-in-out; ">
         <div class="flex">
-            <h1 class=" text-[var(--text)] transform hover:scale-105 transistion duration-300" style="animation: SlideLeft 0.8s ease-in-out">launder</h1><span class="text-[var(--bg)]" style="animation: SlideDown 2s ease-in-out">Track</span>
+            <h1 class=" text-[var(--text)] transform hover:scale-105 transistion duration-300" style="animation: SlideLeft 0.8s ease-in-out" ng-click="openMenuFunc()" id="menubar">launder</h1><span class="text-[var(--bg)]" style="animation: SlideDown 2s ease-in-out">Tr<span><i class="fa-solid fa-shirt text-lg"></i></span>ck</span>
         </div>
-        
+
     </nav>
-    <div style="animation: FadeIn 2s ease-in-out">
+
+    
+
+
+
+    <div>
         @RenderBody()
     </div>
-    <footer class="border-t border-black m-4">
+    <footer class="border-t border-black m-4" style="margin-left: calc(25% + 20px);">
         <p class="text-sm text-black text-center m-4">
             launderTrack - @@2026 Miguel Andrei Tan. All Rights Reserved.
         </p>
-      
+
     </footer>
     <script src="~/Scripts/angular.min.js"></script>
     <script src="~/Scripts/jquery-3.7.0.min.js"></script>
     <script src="~/Scripts/scripts/ModuleScript.js"></script>
     <script src="~/Scripts/scripts/ServiceScript.js"></script>
     <script src="~/Scripts/scripts/ControllerScript.js"></script>
+    <script src="~/Scripts/scripts/script.js"></script>
 
 </body>
 </html>

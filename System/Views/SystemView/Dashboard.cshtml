@@ -1,0 +1,99 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<div class="fixed w-1/4 bg-[var(--primary)] h-[100%] top-0 z-10 sideBarContainer" style="animation: SlideLeft 1s ease-in-out" id="sidebar" >
+    <div class="flex flex-col gap-8 text-lg font-semibold text-[var(--bg)] m-12">
+        <div class="flex gap-1 mt-10 cursor-pointer">
+            <i class="fa-solid fa-chart-area mt-1"></i>
+            <p>DashBoard</p>
+        </div>
+        <div class="flex gap-1 cursor-pointer">
+            <i class="fa-solid fa-receipt mt-1"></i>
+            <p>Orders</p>
+        </div>
+        <div class="flex gap-1 cursor-pointer">
+            <i class="fa-regular fa-circle-user mt-1"></i>
+            <p>Customers</p>
+        </div>
+        <div class="flex gap-1 cursor-pointer">
+            <i class="fa-solid fa-newspaper mt-1"></i>
+            <p>Reports</p>
+        </div>
+        <div class="flex gap-1 cursor-pointer">
+            <i class="fa-solid fa-door-open mt-1"></i>
+            <p>Sign Out</p>
+        </div>
+    </div>
+</div>
+<div ng-init="getData(); getLoginDataFunc();" class="mainContainer">
+    <div class="min-h-screen flex justify-center text-white">
+        <div class="w-full max-w-[90%] p-8" style="animation: FadeIn 1s ease-in-out">
+            <h1 class="text-3xl font-bold mb-8 text-[var(--text)]">Welcome Boss <span class="text-[var(--primary)]">{{UserInfo.Name}}</span>!</h1>
+            <div class="flex flex-wrap flex-col justify-center gap-2 mb-8">
+                <div class="flex gap-4">
+                    <div class="flex flex-col gap-4 bg-[var(--primary)]  text-white p-3 rounded-md w-1/2 boxShadow">
+                        <h1 class="text-center text-xl font-bold">Total Customer</h1>
+                        <p class="text-center text-xl font-bold" id="TotalCustomers">0</p>
+                    </div>
+                    <div class="flex flex-col gap-4 bg-[var(--primary)]  text-white p-3 rounded-md w-1/2 boxShadow">
+                        <h1 class="text-center text-xl font-bold">Total Users</h1>
+                        <p class="text-center text-xl font-bold" id="TotalUsers">0</p>
+                    </div>
+                    <div class="flex flex-col gap-4 bg-[var(--primary)]  text-white p-3 rounded-md w-1/2 boxShadow">
+                        <h1 class="text-center text-xl font-bold">Total Orders</h1>
+                        <p class="text-center text-xl font-bold" id="TotalOrders">0</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="flex flex-col gap-4 bg-[var(--primary)]  text-white p-3 rounded-md w-1/2 boxShadow">
+                        <h1 class="text-center text-xl font-bold">Pending Order</h1>
+                        <p class="text-center text-xl font-bold" id="PendingOrders">0</p>
+                    </div>
+                    <div class="flex flex-col gap-4 bg-[var(--primary)]  text-white p-3 rounded-md w-1/2 boxShadow">
+                        <h1 class="text-center text-xl font-bold">Finsihed Order</h1>
+                        <p class="text-center text-xl font-bold" id="FinishedOrders">0</p>
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+            <div class="rounded-tl-full rounded-tr-full p-2 bg-white border-t-[3.5px] border-[var(--border)] text-[var(--primary)] w-[20%]">
+                <div class="flex justify-center align-center mt-2">
+                    <i class="fa-solid fa-circle-user text-3xl align-center "></i>
+                    <p ng-show="isWeb" class="text-2xl font-bold">List</p>
+                </div>
+            </div>
+            <div class="flex flex-col items-center gap-1">
+                <div class="rounded-md bg-white border border-transparent w-full">
+                    <div class="m-8">
+                        <div ng-repeat="user in userArray" class="transform hover:scale-105 transition duration-700">
+                            <div class="border-b-[2.5px] border-[var(--border)] rounded-full font-bold flex p-2">
+                                <div class="bg-[var(--border)] rounded-full text-[var(--primary)] p-4">
+                                    <i class="fa-regular fa-face-grin m-[auto]"></i>
+                                </div>
+                                <div class="flex justify-between w-full">
+                                    <div class="flex flex-col gap-1 ml-2 text-[var(--text)]">
+                                        <p class="text-xl font-small">{{user.Name}}</p>
+                                        <p class="text-sm">{{user.Contact}}</p>
+
+                                    </div>
+                                    <div class="flex justify-center align-center">
+                                        <p class="text-md m-[auto] p-1 border rounded-full uppercase" ng-class="{'bg-[var(--border)] text-black' : user.RoleID === 'customer', 'bg-[var(--primary)] text-white' : user.RoleID === 'admin'}">{{user.RoleID}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </div>
+</div>

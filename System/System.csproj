@@ -943,6 +943,7 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\scripts\ControllerScript.js" />
     <Content Include="Scripts\scripts\ModuleScript.js" />
+    <Content Include="Scripts\scripts\script.js" />
     <Content Include="Scripts\scripts\ServiceScript.js" />
     <Content Include="Scripts\sitemap.xml" />
     <Content Include="Scripts\test-bundles\angular-aria.js" />
@@ -971,8 +972,9 @@
     <Content Include="Views\Shared\_LayoutPage.cshtml" />
     <Content Include="Views\SystemView\Registration.cshtml" />
     <Content Include="Views\SystemView\Login.cshtml" />
-    <Content Include="Views\SystemView\Home.cshtml" />
+    <Content Include="Views\SystemView\Dashboard.cshtml" />
     <Content Include="Views\SystemView\Index.cshtml" />
+    <Content Include="Views\SystemView\Home.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
