@@ -1,8 +1,45 @@
-﻿@{
+@{
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
 }
-<div ng-init="getLoginDataFunc()">
-    <p class="">Welcome back <span>{{UserInfo.Name}}</span>!</p>
+<div class="fixed w-1/4 bg-[var(--primary)] h-[100%] top-0 z-10 sideBarContainer" style="animation: SlideLeft 1s ease-in-out" id="sidebar">
+    <div class="flex flex-col  text-lg font-semibold text-[var(--bg)] m-12 ">
+        <div class="flex gap-1  cursor-pointer hover:bg-[#E3CACA] duration-700 hover:text-black mt-[20%] p-4">
+            <i class="fa-solid fa-chart-area mt-1"></i>
+            <p>Home</p>
+        </div>
+        <div class="flex gap-1  cursor-pointer hover:bg-[#E3CACA] duration-700 hover:text-black p-4" ng-click="redirectFunc(5)">
+            <i class="fa-solid fa-door-open mt-1"></i>
+            <p ">Sign Out</p>
+        </div>
+    </div>
 </div>
+<div class=" mainContainer" ng-init="getLoginDataFunc()">
 
-    
+    <div class="min-h-screen flex justify-content flex-col gap-4">
+        <div class="w-full max-w-[90%] p-8" style="animation: FadeIn 1s ease-in-out">
+
+            <h1 class="text-3xl font-bold text-[var(--text)] mb-8">Welcome back <span class="text-[var(--primary)]">{{UserInfo.Name}}</span>!</h1>
+
+            <div class="flex flex-col  flex-wrap gap-4 ">
+                <div class="border-[var(--border)] bg-[var(--primary)] flex gap-4 rounded-[20px] p-[10%] m-auto boxShadow">
+                    <div class="flex flex-col gap-2">
+                        <p class="text-3xl text-[var(--bg)] font-bold">Your Service: </p>
+                        <div class="flex gap-4">
+                            <p class="text-[var(--bg)] text-xl mt-1">PickUp Ready? </p>
+                            <p class="mt-1 bg-[#FF0000] p-1 rounded-md font-semibold">Not Finished </p>
+                        </div>
+                        <div class="bg-[#28C72F] p-2 rounded-full text-center mt-4">
+                            <p class="font-semibold">Paid</p>
+                        </div>
+                    </div>
+
+                    <p class="text-2xl text-white font-bold mt-1">Full-Service</p>
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
