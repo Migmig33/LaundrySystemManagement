@@ -28,10 +28,13 @@
             if (!sidebar.contains(event.target) && !menubar.contains(event.target)) {
                 sidebar.classList.remove('show');
                 console.log("this nigga working");
+            } else {
+                null;
             }
         }
     });
     $scope.userArray = [];
+  
 
     $scope.addFunction = function () {
 
@@ -101,9 +104,28 @@
     }
 
     $scope.directLogin = function () {
+        var defaultAdmin = {
+            "Name": "Miguel",
+            "Contact": "09272413924",
+            "Address": "Pagitan",
+            "RoleID": "admin",
+            "Username": "67",
+            "Password": "67"
+        }
+
+        var defaultCustomer = {
+            "Name": "Tan",
+            "Contact": "09272413924",
+            "Address": "Pagitan",
+            "RoleID": "customer",
+            "Username": "77",
+            "Password": "77"
+        }
+
+        $scope.userArray.push(defaultAdmin, defaultCustomer);
         var storedData = JSON.stringify($scope.userArray);
         sessionStorage.setItem("UserArray", storedData);
-        $scope.redirectFunc(1);
+        $scope.redirectFunc("Login");
     }
     $scope.getData = function () {
         var userDatas = sessionStorage.getItem("UserArray");
@@ -117,18 +139,24 @@
         $scope.loggedPassword = " ";
     }
 
-    $scope.redirectFunc = function (number) {
-        switch (number){
-            case 1:
+    $scope.redirectFunc = function (page) {
+        switch (page){
+            case "Login":
                 return window.location.href = "/SystemView/Login";
-            case 2:
+            case "Register":
                 return window.location.href = "/SystemView/Registration";
-            case 3:
-                return window.location.href = "/SystemView/Home";
-            case 4:
+            case "Index":
                 return window.location.href = "/SystemView/Index";
-            case 5:
+            case "Home":
+                return window.location.href = "/SystemView/Home";
+            case "Dashboard":
                 return window.location.href = "/SystemView/Dashboard";
+            case "Customers":
+                return window.location.href = "/SystemView/Customers";
+            case "Orders":
+                return window.location.href = "/SystemView/Orders";
+            case "Reports":
+                return window.location.href = "/SystemView/Reports"
             default:
                 return null;
         }
@@ -147,8 +175,8 @@
                 icon: "success"
             });
             sessionStorage.setItem("UserLoginData", JSON.stringify(checkLogin));
-            if (checkLogin?.RoleID === "admin") { $scope.redirectFunc(5); }
-            if (checkLogin?.RoleID === "customer") { $scope.redirectFunc(3); }
+            if (checkLogin?.RoleID === "admin") { $scope.redirectFunc("Dashboard"); }
+            if (checkLogin?.RoleID === "customer") { $scope.redirectFunc("Home"); }
         
         
         }else {
@@ -164,8 +192,6 @@
         var userData = sessionStorage.getItem("UserLoginData");
         $scope.UserInfo = JSON.parse(userData);
         var totalUsers = document.getElementById("TotalUsers").innerText = " Users";
-
-        
     }
     
 });
