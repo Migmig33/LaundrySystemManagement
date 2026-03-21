@@ -29,7 +29,7 @@
                 sidebar.classList.remove('show');
                 console.log("this nigga working");
             } else {
-                null;
+                console.log(null);
             }
         }
     });
@@ -192,6 +192,13 @@
         var userData = sessionStorage.getItem("UserLoginData");
         $scope.UserInfo = JSON.parse(userData);
         var totalUsers = document.getElementById("TotalUsers").innerText = " Users";
+    }
+    $scope.saveUserFunc = function () {
+        var saveUserData = service.saveUserService();
+        saveUserData.then(function (response) {
+            alert(response.data);
+
+        });
     }
     
 });
