@@ -193,8 +193,22 @@
         $scope.UserInfo = JSON.parse(userData);
         var totalUsers = document.getElementById("TotalUsers").innerText = " Users";
     }
+
+   
     $scope.saveUserFunc = function () {
-        var saveUserData = service.saveUserService();
+        $scope.userData = {
+            Name: $scope.Name,
+            Contact: $scope.Contact,
+            Address: $scope.Address,
+            RoleID: $scope.RoleID,
+            Username: $scope.Username,
+            Password: $scope.Password,
+            CreatedAt: new Date(),
+            ModifiedAt: new Date(),
+            isActive: 1
+        };
+        console.log("data is", $scope.userData);
+        var saveUserData = service.saveUserService($scope.userData);
         saveUserData.then(function (response) {
             alert(response.data);
 

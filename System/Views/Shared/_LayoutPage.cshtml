@@ -89,21 +89,23 @@
         .boxShadow {
             box-shadow: -6px 4px 6px rgba(0, 0, 0, 0.2);
         }
+
         .mainContainer {
             margin-left: calc(25% + 20px);
             margin-top: calc(5% + 5px);
         }
-        @@media(max-width: 480px){
+
+        @@media(max-width: 480px) {
             .sideBarContainer {
                 left: -70%;
                 transition: 0.5s ease-in-out;
             }
 
-            .sideBarContainer.show{
-                left: 0;
-                width: 70%;
-                
-            }
+                .sideBarContainer.show {
+                    left: 0;
+                    width: 70%;
+                }
+
             .mainContainer {
                 margin-left: 0;
                 margin-top: calc(15% + 10px);
@@ -118,9 +120,9 @@
 
     </nav>
 
-    
 
-        
+
+
 
     <div>
         @RenderBody()
@@ -131,8 +133,8 @@
         </p>
 
     </footer>
-    <script src="~/Scripts/angular.min.js"></script>
     <script src="~/Scripts/jquery-3.7.0.min.js"></script>
+    <script src="~/Scripts/angular.min.js"></script>
     <script src="~/Scripts/scripts/ModuleScript.js"></script>
     <script src="~/Scripts/scripts/ServiceScript.js"></script>
     <script src="~/Scripts/scripts/ControllerScript.js"></script>

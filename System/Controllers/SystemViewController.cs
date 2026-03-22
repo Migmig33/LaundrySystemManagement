@@ -1,11 +1,13 @@
-﻿using System;
+﻿using LaunderTrack.Models.Context;
+using LaunderTrack.Models.Tables;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using LaunderTrack.Models.Tables;
-using System.Models.Context;
 using System.Web.Razor.Generator;
+using System.Web.Security;
+using System.Xml.Linq;
 
 namespace System.Controllers
 {
@@ -32,40 +34,54 @@ namespace System.Controllers
         {
             return View();
         }
-        public string SaveUser()
+        public string SaveUser(Users user_data)
         {
+        
             try
             {
-                using (var connect = new DBContext())
+                using (var connect = new DB_Context())
                 {
-                    var user_data = new Users
+                    //GetRowIndex
+                    var getDataIndex = connect.tbl_users.Where(x => x.UserID == 20).FirstOrDefault();
+
+                    if(getDataIndex == null) 
                     {
-                       Name = "lala",
-                       Contact = "lala",
-                       Address = "Request.Form[]",
-                       Username = "Request.Form[Username",
-                       Password = "Request.Form[password",
-                       RoleID = 1,  
-                       CreatedAt = DateTime.Now,
-                       ModifiedAt = DateTime.Now,
-                       isActive = 1
-                    };
-                    connect.tbl_users.Add(user_data);
-                    connect.SaveChanges();
+                        // if null iInsert
+                        var newUserData = new Users
+                        {
+                            Name = user_data.Name,
+                            Contact = user_data.Contact,
+                            Address = user_data.Address,
+                            Username = user_data.Username,
+                            Password = user_data.Password,
+                            RoleID = user_data.RoleID,
+                            CreatedAt = user_data.CreatedAt,
+                            ModifiedAt = user_data.ModifiedAt,
+                            isActive = user_data.isActive
+                        };
+                        connect.tbl_users.Add(user_data);
+                        connect.SaveChanges();
+                    }
+                    else
+                    {
+                        // if empty update
+                        getDataIndex.Name = user_data.Name;
+                        getDataIndex.Contact = user_data.Contact;
+                        getDataIndex.Address = user_data.Address;
+                        getDataIndex.Username = user_data.Username;
+                        getDataIndex.Password = user_data.Password;
+                        getDataIndex.ModifiedAt = user_data.ModifiedAt;
+                        connect.SaveChanges();
+
+                    }
                 }
                 return "success";
+               
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                var inner = ex.InnerException != null ? ex.InnerException.Message : "No inner exception";
-
-                var errorMessage = $@"
-ERROR: {ex.Message}
-INNER: {inner}
-STACK: {ex.StackTrace}
-";
-
-                return errorMessage;
+                
+                return ErrorHandling(ex.Message, ex.InnerException.ToString(), ex.StackTrace);
             }
         }
         public string ErrorHandling(string errorMessage, string innerException, string stackTrace)
