@@ -7,8 +7,8 @@ namespace LaunderTrack.Models.Tables
 {
     public class Orders
     {
-        public Guid OrderID { get; set; }
-        public int Price { get; set; }
+        public int OrderID { get; set; }
+        public decimal Price { get; set; }
         public int Quantity { get; set; }
         public bool isPaid { get; set; }
         public bool isFinished { get; set; }

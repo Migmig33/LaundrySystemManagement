@@ -7,9 +7,9 @@ namespace LaunderTrack.Models.Tables
 {
     public class Feedbacks
     {
-        public Guid FeedbackID { get; set; }
+        public int FeedbackID { get; set; }
         public string FeedbackDesc { get; set; } = string.Empty;
-        public Guid CustomerID { get; set; }
+        public int CustomerID { get; set; }
         public DateTime createdAt { get; set; }
         public DateTime modifiedAt { get; set; }
     }
