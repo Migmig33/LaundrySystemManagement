@@ -12,9 +12,9 @@ namespace LaunderTrack.Models.Tables
         public int Quantity { get; set; }
         public bool isPaid { get; set; }
         public bool isFinished { get; set; }
-        public Guid CustomerID { get; set; }
-        public Guid ServiceTypeID { get; set; }
-        public Guid FeedbackID { get; set; }
+        public int CustomerID { get; set; }
+        public int ServiceTypeID { get; set; }
+        public int FeedbackID { get; set; }
         public DateTime createdAt { get; set; }
         public DateTime modifiedAt { get; set; }
         }

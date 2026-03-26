@@ -5,7 +5,7 @@ using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Web;
 
-namespace System.Models.Maps
+namespace LaunderTrack.Models.Maps
 {
     public class Feedbacks_Map : EntityTypeConfiguration<Feedbacks>
     {

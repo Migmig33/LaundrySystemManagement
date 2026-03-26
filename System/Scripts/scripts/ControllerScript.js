@@ -195,7 +195,7 @@
     }
 
    
-    $scope.saveUserFunc = function () {
+    $scope.saveUserFunc = function (id) {
         $scope.userData = {
             Name: $scope.Name,
             Contact: $scope.Contact,
@@ -208,7 +208,8 @@
             isActive: 1
         };
         console.log("data is", $scope.userData);
-        var saveUserData = service.saveUserService($scope.userData);
+        console.log("id is", id);
+        var saveUserData = service.saveUserService($scope.userData, id);
         saveUserData.then(function (response) {
             alert(response.data);
 

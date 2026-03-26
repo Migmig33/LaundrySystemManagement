@@ -203,13 +203,11 @@
     <Compile Include="Models\Maps\Customers_Map.cs" />
     <Compile Include="Models\Maps\Feedbacks_Map.cs" />
     <Compile Include="Models\Maps\Orders_Map.cs" />
-    <Compile Include="Models\Maps\Roles_Map.cs" />
     <Compile Include="Models\Maps\Services_Map.cs" />
     <Compile Include="Models\Maps\Users_Map.cs" />
     <Compile Include="Models\Tables\Customers.cs" />
     <Compile Include="Models\Tables\Feedbacks.cs" />
     <Compile Include="Models\Tables\Orders.cs" />
-    <Compile Include="Models\Tables\Roles.cs" />
     <Compile Include="Models\Tables\Services.cs" />
     <Compile Include="Models\Tables\Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

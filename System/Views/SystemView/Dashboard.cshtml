@@ -4,24 +4,34 @@
 <div class="fixed w-1/4 bg-[var(--primary)] h-[100%] top-0 z-10 sideBarContainer" style="animation: SlideLeft 1s ease-in-out" id="sidebar" >
     <div class="flex flex-col gap-8 text-lg font-semibold text-[var(--bg)] m-12">
         <div class="flex gap-1 mt-10 cursor-pointer" ng-click="redirectFunc()">
-            <i class="fa-regular fa-circle-user mt-1"></i>
-            <p>Customers</p>
+            <div class="border p-1 bg-[var(--border)] rounded-full text-black">
+                <i class="fa-regular fa-circle-user mt-1"></i>
+            </div>
+            <p class="mt-1">Customers</p>
         </div>
         <div class="flex gap-1  cursor-pointer">
-            <i class="fa-solid fa-chart-area mt-1"></i>
-            <p>DashBoard</p>
+            <div class="border p-1 bg-[var(--border)] rounded-full text-black">
+                <i class="fa-solid fa-chart-area mt-1"></i>
+            </div>
+            <p class="mt-1">DashBoard</p>
         </div>
         <div class="flex gap-1 cursor-pointer" ng-click="redirectFunc()">
-            <i class="fa-solid fa-receipt mt-1"></i>
+            <div class="border p-1 bg-[var(--border)] rounded-full text-black">
+                <i class="fa-solid fa-receipt mt-1"></i>
+            </div>
             <p>Orders</p>
         </div>
         <div class="flex gap-1 cursor-pointer" ng-click="redirectFunc()">
-            <i class="fa-solid fa-newspaper mt-1"></i>
-            <p>Reports</p>
+            <div class="border p-1 bg-[var(--border)] rounded-full text-black">
+                <i class="fa-solid fa-newspaper mt-1"></i>
+            </div>
+            <p class="mt-1">Reports</p>
         </div>
         <div class="flex gap-1 cursor-pointer" ng-click="redirectFunc('Index')">
-            <i class="fa-solid fa-door-open mt-1"></i>
-            <p>Sign Out</p>
+            <div class="border p-1 bg-[var(--border)] rounded-full text-black">
+                <i class="fa-solid fa-door-open mt-1"></i>
+            </div>
+            <p class="mt-1">Signout </p>
         </div>
     </div>
 </div>
@@ -97,3 +107,5 @@
         </div>
     </div>
 </div>
+
+<table></table>

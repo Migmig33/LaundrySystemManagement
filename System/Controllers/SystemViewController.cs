@@ -9,7 +9,7 @@ using System.Web.Razor.Generator;
 using System.Web.Security;
 using System.Xml.Linq;
 
-namespace System.Controllers
+namespace LaunderTrack.Controllers
 {
     public class SystemViewController : Controller
     {
@@ -34,16 +34,18 @@ namespace System.Controllers
         {
             return View();
         }
-        public string SaveUser(Users user_data)
+        public string SaveUser(Users user_data, int id)
         {
         
             try
             {
                 using (var connect = new DB_Context())
                 {
-                    //GetRowIndex
-                    var getDataIndex = connect.tbl_users.Where(x => x.UserID == 20).FirstOrDefault();
 
+                    System.Diagnostics.Debug.WriteLine("the id is : " + id);
+                    //GetRowIndex
+                    var getDataIndex = connect.tbl_users.Where(x => x.UserID == id).FirstOrDefault();
+                        
                     if(getDataIndex == null) 
                     {
                         // if null iInsert
