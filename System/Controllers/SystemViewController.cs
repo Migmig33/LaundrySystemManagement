@@ -1,9 +1,12 @@
 ﻿using LaunderTrack.Models.Context;
 using LaunderTrack.Models.Tables;
+using Microsoft.Ajax.Utilities;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 using System.Web.Razor.Generator;
 using System.Web.Security;
@@ -34,7 +37,19 @@ namespace LaunderTrack.Controllers
         {
             return View();
         }
-        public string SaveUser(Users user_data, int id)
+        public ActionResult Customers()
+        {
+            return View();
+        }
+        public ActionResult Orders()
+        {
+            return View();
+        }
+        public ActionResult Reports()
+        {
+            return View();
+        }
+        public string SaveCustomers(Users user_data, int id)
         {
         
             try
@@ -63,6 +78,16 @@ namespace LaunderTrack.Controllers
                         };
                         connect.tbl_users.Add(user_data);
                         connect.SaveChanges();
+
+                        var newCustomerData = new Customers
+                        {
+                            UserID = user_data.UserID,
+                            RoleID = user_data.RoleID,
+                            createdAt = DateTime.Now,
+                            modifiedAt = DateTime.Now
+                        };
+                        connect.tbl_customers.Add(newCustomerData);
+                        connect.SaveChanges();
                     }
                     else
                     {
@@ -77,13 +102,51 @@ namespace LaunderTrack.Controllers
 
                     }
                 }
+                
                 return "success";
+                
                
             }
             catch (Exception ex)
             {
-                
                 return ErrorHandling(ex.Message, ex.InnerException.ToString(), ex.StackTrace);
+            }
+        }
+
+        public JsonResult GetCustomers()
+        {
+            try
+            {
+                using (var connect = new DB_Context())
+                {
+                    //var data = connect.tbl_users.Select(x => x).ToList();
+                    //var data = (from customers in connect.tbl_customers
+                    //            join orders in connect.tbl_orders on customers.UserID equals orders.CustomerID
+                    //            select new { customers, orders }
+                    //            );
+                    var data = (from customers in connect.tbl_customers
+                                join users in connect.tbl_users on customers.UserID equals users.UserID
+                                join roles in connect.tbl_roles on users.RoleID equals roles.RoleID
+                                select new
+                                {
+                                    
+                                    UserID = customers.UserID,
+                                    Name = users.Name,
+                                    Contact = users.Contact,
+                                    Address = users.Address,
+                                    RoleName = roles.RoleName,
+                                    CreatedAt = users.CreatedAt,
+                                    Username = users.Username,
+                                    Password = users.Password
+
+                                }
+                                ).ToList();
+                    return Json(data, JsonRequestBehavior.AllowGet);
+                }
+            }
+            catch (Exception ex)
+            {
+                return Json(ErrorHandling(ex.Message, ex.InnerException.ToString(), ex.StackTrace), JsonRequestBehavior.AllowGet);
             }
         }
         public string ErrorHandling(string errorMessage, string innerException, string stackTrace)

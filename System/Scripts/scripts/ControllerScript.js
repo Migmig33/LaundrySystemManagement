@@ -1,7 +1,17 @@
 ﻿app.controller("controller", function ($scope, service) {
 
+    // Screen ResponsivenesssssssssssssssassSS
     $scope.isMobile = false;
     $scope.isWeb = false;
+
+
+    // Fields Error Output
+    $scope.NameField = false;
+    $scope.ContactField = false;
+    $scope.RoleField = false;
+    $scope.UsernameField = false;
+    $scope.PasswordField = false;
+    hasError = false;
     window.addEventListener('resize', function () {
         $scope.$apply(function () {
             if (window.innerWidth <= 480) {
@@ -36,44 +46,37 @@
     $scope.userArray = [];
   
 
-    $scope.addFunction = function () {
-
-        $scope.NameField = false;
-        $scope.ContactField = false;
-        $scope.RoleField = false;
-        $scope.UsernameField = false;
-        $scope.PasswordField = false;
-        hasError = false;
-        if (!$scope.Name || $scope.Name.trim() === ""){$scope.NameField = true; hasError = true;}
-        if (!$scope.Contact || $scope.Contact.trim() === ""){$scope.ContactField = true; hasError = true;}
-        if (!$scope.RoleID || $scope.RoleID.trim() === "") {$scope.RoleField = true; hasError = true;}
-        if (!$scope.Username || $scope.Username.trim() === ""){$scope.UsernameField = true; hasError = true;}
-        if (!$scope.Password || $scope.Password.trim() === ""){$scope.PasswordField = true; hasError = true;}
-        if (hasError) {
-            Swal.fire({
-                title: "Invalid",
-                text: "Please Fill the field",
-                icon: "error"
-            });
-        } else {
-            var customerData = {
-                "Name": $scope.Name,
-                "Contact": $scope.Contact,
-                "Address": $scope.Address,
-                "RoleID": $scope.RoleID,
-                "Username": $scope.Username,
-                "Password": $scope.Password
-            }
-            Swal.fire({
-                title: "Success!",
-                text: "Customer Successfully Added!",
-                icon: "success"
-            });
-            $scope.userArray.push(customerData);
-            $scope.checkDatas();
-        }
+    //$scope.addFunction = function () {
+    //    if (!$scope.Name || $scope.Name.trim() === ""){$scope.NameField = true; hasError = true;}
+    //    if (!$scope.Contact || $scope.Contact.trim() === ""){$scope.ContactField = true; hasError = true;}
+    //    if (!$scope.RoleID || $scope.RoleID.trim() === "") {$scope.RoleField = true; hasError = true;}
+    //    if (!$scope.Username || $scope.Username.trim() === ""){$scope.UsernameField = true; hasError = true;}
+    //    if (!$scope.Password || $scope.Password.trim() === ""){$scope.PasswordField = true; hasError = true;}
+    //    if (hasError) {
+    //        Swal.fire({
+    //            title: "Invalid",
+    //            text: "Please Fill the field",
+    //            icon: "error"
+    //        });
+    //    } else {
+    //        var customerData = {
+    //            "Name": $scope.Name,
+    //            "Contact": $scope.Contact,
+    //            "Address": $scope.Address,
+    //            "RoleID": $scope.RoleID,
+    //            "Username": $scope.Username,
+    //            "Password": $scope.Password
+    //        }
+    //        Swal.fire({
+    //            title: "Success!",
+    //            text: "Customer Successfully Added!",
+    //            icon: "success"
+    //        });
+    //        $scope.userArray.push(customerData);
+    //        $scope.checkDatas();
+    //    }
        
-    }
+    //}
 
     $scope.removeFunction = function () {
         $scope.Name = " ";
@@ -118,7 +121,7 @@
             "Contact": "09272413924",
             "Address": "Pagitan",
             "RoleID": "customer",
-            "Username": "77",
+            "Username": "77",   
             "Password": "77"
         }
 
@@ -191,29 +194,53 @@
     $scope.getLoginDataFunc = function () {
         var userData = sessionStorage.getItem("UserLoginData");
         $scope.UserInfo = JSON.parse(userData);
-        var totalUsers = document.getElementById("TotalUsers").innerText = " Users";
     }
 
    
     $scope.saveUserFunc = function (id) {
-        $scope.userData = {
-            Name: $scope.Name,
-            Contact: $scope.Contact,
-            Address: $scope.Address,
-            RoleID: $scope.RoleID,
-            Username: $scope.Username,
-            Password: $scope.Password,
-            CreatedAt: new Date(),
-            ModifiedAt: new Date(),
-            isActive: 1
-        };
-        console.log("data is", $scope.userData);
-        console.log("id is", id);
-        var saveUserData = service.saveUserService($scope.userData, id);
-        saveUserData.then(function (response) {
-            alert(response.data);
-
-        });
+        $scope.NameField = false;
+        $scope.ContactField = false;
+        $scope.UsernameField = false;
+        $scope.PasswordField = false;
+        hasError = false;
+        if (!$scope.Name) { $scope.NameField = true; hasError = true; }
+        if (!$scope.Contact) { $scope.ContactField = true; hasError = true; }
+        if (!$scope.Username) { $scope.UsernameField = true; hasError = true; }
+        if (!$scope.Password) { $scope.PasswordField = true; hasError = true; }
+        if (hasError) {
+            Swal.fire({
+                icon: "error",
+                title: "Invalid!",
+                text: "Please fill out Required Field!",
+            });
+        } else {
+            $scope.userData = {
+                Name: $scope.Name,
+                Contact: $scope.Contact,
+                Address: $scope.Address,
+                RoleID: 2,
+                Username: $scope.Username,
+                Password: $scope.Password,
+                CreatedAt: new Date(),
+                ModifiedAt: new Date(),
+                isActive: 1
+            };
+            console.log("data is", $scope.userData);
+            console.log("id is", id);
+            var saveUserData = service.saveUserService($scope.userData, id);
+            saveUserData.then(function (response) { });
+            Swal.fire({
+                icon: "success",
+                title: "Success",
+                text: "Customer Successfully Added"
+            });
+        }
+        
     }
-    
+    $scope.getUsersDataFunc = function () {
+        var getUserData = service.getUserDataService()
+            getUserData.then(function (returnedData) {
+                $scope.userDatas = returnedData.data;
+            })
+    }
 });
