@@ -158,6 +158,8 @@
                 return window.location.href = "/SystemView/Customers";
             case "Orders":
                 return window.location.href = "/SystemView/Orders";
+            case "OrderDetails":
+                return window.location.href = "/SystemView/OrderDetails";
             case "Reports":
                 return window.location.href = "/SystemView/Reports"
             default:
@@ -196,7 +198,14 @@
         $scope.UserInfo = JSON.parse(userData);
     }
 
-   
+
+
+
+
+
+    // CONNECTED TO THE BACKEND FUNCTIONS
+
+    // Save Users/Customers
     $scope.saveUserFunc = function (id) {
         $scope.NameField = false;
         $scope.ContactField = false;
@@ -228,19 +237,108 @@
             console.log("data is", $scope.userData);
             console.log("id is", id);
             var saveUserData = service.saveUserService($scope.userData, id);
-            saveUserData.then(function (response) { });
-            Swal.fire({
-                icon: "success",
-                title: "Success",
-                text: "Customer Successfully Added"
+            saveUserData.then(function (response) {
+                Swal.fire({
+                    icon: "success",
+                    title: "Success",
+                    text: "Customer Successfully Added"
+                });
             });
+            
         }
         
     }
+    $scope.saveOrdersFunc = function (id) {
+        alert(id);
+        $scope.NameField = false;
+        $scope.QuantityField = false;
+        $scope.ServiceField = false;
+        $scope.PaidField = false;
+        if (!$scope.Name) { hasError = true; NameField = true }
+        if (!$scope.Quantity) { hasError = true; QuantityField = true }
+        if (!$scope.Name) { hasError = true; ServiceField = true }
+        if (!$scope.Name) { hasError = true; PaidField = true }
+        if (hasError) {
+            Swal.fire({
+                icon: "error",
+                title: "Invalid!",
+                text: "Please fill out required field"
+            });
+        } else {
+            var orderData = {
+                CustomerID: $scope.Name,
+                Quantity: $scope.Quantity,
+                ServiceTypeID: $scope.ServiceTypeID,
+                isPaid: $scope.isPaid,
+                isFinished: $scope.isFinished,
+                CreatedAt: new Date(),
+                ModifiedAt: new Date()
+
+            };
+            var saveOrderData = service.saveOrderService(orderData, id)
+            saveOrderData.then(function (response) {
+                Swal.fire({
+                    icon: "success",
+                    title: "Success!",
+                    text: response.data
+
+                });
+            })
+        }
+    }
+    // Get Users/Customers
     $scope.getUsersDataFunc = function () {
         var getUserData = service.getUserDataService()
             getUserData.then(function (returnedData) {
                 $scope.userDatas = returnedData.data;
             })
+    }
+
+    $scope.getOrdersDataFunc = function () {
+
+        var getOrdersData = service.getOrdersDataService()
+        getOrdersData.then(function (returnedData) {
+            $scope.ordersData = returnedData.data;
+        })
+        $scope.getServicesDataFunc();
+    }
+    $scope.getServicesDataFunc = function () {
+        var getServicesData = service.getServicesDataService()
+        getServicesData.then(function (returnedData) {
+            if (returnedData.data.success) {
+                $scope.servicesData = returnedData.data.data;
+            } else {
+                alert(returnedData.data.error);
+            }
+            
+        })
+    }
+
+    // Direct Functions
+    $scope.directOrderDetailsFunc = function (id) {
+        var orderDetailsData = $scope.ordersData.find(
+            items => items.OrderID == id
+        );
+        sessionStorage.setItem("OrderDetailsData", JSON.stringify(orderDetailsData));
+        $scope.redirectFunc("OrderDetails");
+
+    }
+
+    $scope.getOrderDetailsDataFunc = function () {
+        var orderDetailsData = sessionStorage.getItem("OrderDetailsData");
+        parsedData = JSON.parse(orderDetailsData);
+        $scope.OrderID = parsedData.OrderID;
+        $scope.Name = parsedData.Name;
+        $scope.Price = parsedData.Price;
+        $scope.Quantity = parsedData.Quantity;
+        $scope.ServiceType = parsedData.ServiceType;
+        $scope.isPaid = parsedData.isPaid;
+        $scope.isFinished = parsedData.isFinished;
+        $scope.CreatedAt = parsedData.CreatedAt;
+        $scope.Options = [
+            { value: 1, label: "Yes" },
+            { value: 0, label: "No" }
+
+        ];
     }
 });

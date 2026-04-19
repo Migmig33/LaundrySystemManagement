@@ -10,7 +10,7 @@ namespace LaunderTrack.Models.Tables
         public int CustomerID { get; set; }
         public int RoleID { get; set; }
         public int UserID { get; set; }
-        public DateTime createdAt { get; set; }
-        public DateTime modifiedAt { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime? ModifiedAt { get; set; }
     }
 }

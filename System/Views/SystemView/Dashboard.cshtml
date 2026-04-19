@@ -11,11 +11,11 @@
             <i class="fa-regular fa-circle-user mt-2"></i>
             <p class="mt-1">Customers</p>
         </div>
-        <div class="flex gap-1 cursor-pointer" ng-click="redirectFunc()">
+        <div class="flex gap-1 cursor-pointer" ng-click="redirectFunc('Orders')">
             <i class="fa-solid fa-receipt mt-2"></i>
             <p>Orders</p>
         </div>
-        <div class="flex gap-1 cursor-pointer" ng-click="redirectFunc()">
+        <div class="flex gap-1 cursor-pointer" ng-click="redirectFunc('Reports')">
             <i class="fa-solid fa-newspaper mt-2"></i>
             <p class="mt-1">Reports</p>
         </div>
@@ -74,9 +74,6 @@
                                         <p class="text-xl font-small">{{user.Name}}</p>
                                         <p class="text-sm">{{user.Contact}}</p>
 
-                                    </div>
-                                    <div class="flex justify-center align-center">
-                                        <p class="text-md m-[auto] p-1 border rounded-full uppercase" ng-class="{'bg-[var(--border)] text-black' : user.RoleID === 'customer', 'bg-[var(--primary)] text-white' : user.RoleID === 'admin'}">{{user.RoleID}}</p>
                                     </div>
                                 </div>
                             </div>

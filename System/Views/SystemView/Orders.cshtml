@@ -1,5 +1,5 @@
 ﻿@{
-    Layout = "~/Views/Shared/_LayoutForCnntent.cshtml";
+    Layout = "~/Views/Shared/_LayoutForContent.cshtml";
 }
 
 <div class="fixed w-1/4 bg-[var(--primary)] h-[100%] top-0 z-10 sideBarContainer" style="animation: SlideLeft 1s ease-in-out" id="sidebar">
@@ -12,11 +12,11 @@
             <i class="fa-regular fa-circle-user mt-2"></i>
             <p class="mt-1">Customers</p>
         </div>
-        <div class="flex gap-1 cursor-pointer" ng-click="redirectFunc()">
+        <div class="flex gap-1 cursor-pointer" ng-click="redirectFunc('Orders')">
             <i class="fa-solid fa-receipt mt-2"></i>
             <p>Orders</p>
         </div>
-        <div class="flex gap-1 cursor-pointer" ng-click="redirectFunc()">
+        <div class="flex gap-1 cursor-pointer" ng-click="redirectFunc('Reports')">
             <i class="fa-solid fa-newspaper mt-2"></i>
             <p class="mt-1">Reports</p>
         </div>
@@ -26,34 +26,57 @@
         </div>
     </div>
 </div>
-<div ng-init="getData(); getLoginDataFunc(); getUsersDataFunc();" class="mainContainer">
-    <div class="min-h-screen flex justify-center text-white">
-        <div class="w-full max-w-[90%] p-8" style="animation: FadeIn 1s ease-in-out">
-            <h1 class="text-3xl font-bold mb-8 text-[var(--text)]">Welcome Boss <span class="text-[var(--primary)]">{{UserInfo.Name}}</span>!</h1>
-            <div class="flex flex-wrap flex-col justify-center gap-2 mb-8">
-                <div class="flex gap-4">
-                    <div class="flex flex-col gap-4 bg-[var(--primary)]  text-white p-3 rounded-md w-1/2 boxShadow">
-                        <h1 class="text-center text-xl font-bold">Total Customer</h1>
-                        <p class="text-center text-xl font-bold" id="TotalCustomers">0</p>
+<div ng-init="getOrdersDataFunc(); getUsersDataFunc();" class="mainContainer">
+    <div class="min-h-screen flex items-center justify-center text-white">
+        <div class="w-full max-w-[90%] p-8">
+            <h1 class="text-3xl font-bold mb-4 text-[var(--text)]">
+                Add <span class="text-[var(--primary)]">Orders</span>
+            </h1>
+            <div class="flex flex-col gap-8 mb-8">
+                <form class="flex flex-wrap p-4 border border-transparent rounded-md">
+                    <div class="flex w-1/2 flex-col p-2">
+                        <div class="flex justify-between"><label for="Name" class="text-sm text-[var(--text-sub)] font-bold">Ordered By: <span class="text-[#ff7276] text-md">*</span></label> <span class="text-[#ff7276] text-sm" ng-show="NameField">Please fill this field</span></div>
+                        <select class="validate rounded-md bg-[var(--border)] border-[1.5px] border-[var(--border)] p-3 focus:outline-none  focus:border-[var(--primary)] focus:bg-[var(--bg)] text-black"
+                                ng-model="Name"
+                                ng-options="customer.CustomerID as (customer.CustomerID + ' - ' + customer.Name) for customer in userDatas">
+                        </select>
                     </div>
-                    <div class="flex flex-col gap-4 bg-[var(--primary)]  text-white p-3 rounded-md w-1/2 boxShadow">
-                        <h1 class="text-center text-xl font-bold">Total Users</h1>
-                        <p class="text-center text-xl font-bold" id="TotalUsers">0</p>
+                    <div class="flex w-1/2 flex-col p-2">
+                        <div class="flex justify-between"><label for="Quantity" class="text-sm text-[var(--text-sub)] font-bold">Quantity: <span class="text-[#ff7276] text-md">*</span></label> <span class="text-[#ff7276] text-sm" ng-show="QuantityField">Please fill this field</span></div>
+                        <input type="number"
+                               class="validate  rounded-md bg-[var(--border)] border-[1.5px] border-[var(--border)] p-3 focus:outline-none  focus:border-[var(--primary)] focus:bg-[var(--bg)] text-black"
+                               min="1"
+                               ng-model="Quantity" required />
+                      
                     </div>
-                    <div class="flex flex-col gap-4 bg-[var(--primary)]  text-white p-3 rounded-md w-1/2 boxShadow">
-                        <h1 class="text-center text-xl font-bold">Total Orders</h1>
-                        <p class="text-center text-xl font-bold" id="TotalOrders">0</p>
+                    <div class="flex w-1/2 flex-col p-2">
+                        <div class="flex justify-between"><label for="Service" class="text-sm text-[var(--text-sub)] font-bold">Service Type: <span class="text-[#ff7276] text-md">*</span></label> <span class="text-[#ff7276] text-sm" ng-show="ServiceField">Please fill this field</span></div>
+                        <select class="validate rounded-md bg-[var(--border)] border-[1.5px] border-[var(--border)] p-3 focus:outline-none focus:border-[var(--primary)] focus:bg-[var(--bg)] text-black"
+                                ng-model="ServiceTypeID"
+                                ng-options="order.ServiceTypeID as (order.ServiceTypeID + ' - ' + order.ServiceType) for order in servicesData"></select>
                     </div>
-                </div>
-                <div class="flex gap-4">
-                    <div class="flex flex-col gap-4 bg-[var(--primary)]  text-white p-3 rounded-md w-1/2 boxShadow">
-                        <h1 class="text-center text-xl font-bold">Pending Order</h1>
-                        <p class="text-center text-xl font-bold" id="PendingOrders">0</p>
+                    <div class="flex w-1/2 flex-col p-2">
+                        <div class="flex justify-between"><label for="Paid" class="text-sm text-[var(--text-sub)] font-bold">Paid?: <span class="text-[#ff7276] text-md">*</span></label> <span class="text-[#ff7276] text-sm" ng-show="ServiceField">Please fill this field</span></div>
+                        <select class="validate rounded-md bg-[var(--border)] border-[1.5px] border-[var--border)] p-3 focus:outline-none  focus:border-[var(--primary)] focus:bg-[var(--bg)] text-black"
+                                ng-model="isPaid">
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                        <input type="hidden" ng-model="isFnished" value="0"/>
+
                     </div>
-                    <div class="flex flex-col gap-4 bg-[var(--primary)]  text-white p-3 rounded-md w-1/2 boxShadow">
-                        <h1 class="text-center text-xl font-bold">Finsihed Order</h1>
-                        <p class="text-center text-xl font-bold" id="FinishedOrders">0</p>
-                    </div>
+                </form>
+
+                <div class="flex flex-col gap-2">
+                    <input type="submit"
+                           ng-click="saveOrdersFunc()"
+                           value="Add"
+                           class="rounded-full bg-[var(--primary)] border border-transparent p-3 transform hover:scale-105 transistion duration-300 text-white font-bold" />
+                    <input type="submit"
+                           ng-click="removeFunction()"
+                           value="Clear"
+                           class="rounded-full bg-[#FF0000] border border-transparent p-3 transform hover:scale-105 transistion duration-300 text-black font-bold" />
+
                 </div>
             </div>
             <div class="rounded-tl-full rounded-tr-full p-2 bg-white border-t-[3.5px] border-[var(--border)] text-[var(--primary)] w-[20%]">
@@ -65,19 +88,20 @@
             <div class="flex flex-col items-center gap-1">
                 <div class="rounded-md bg-white border border-transparent w-full">
                     <div class="m-8">
-                        <div ng-repeat="user in userDatas" class="transform hover:scale-105 transition duration-700">
-                            <div class="border-b-[2.5px] border-[var(--border)] rounded-full font-bold flex p-2">
+                        <div ng-repeat="orders in ordersData track by orders.OrderID" class="transform hover:scale-105 transition duration-700 cursor-pointer">
+                            <div class="border-b-[2.5px] border-[var(--border)] rounded-full font-bold flex p-2" ng-click="directOrderDetailsFunc(orders.OrderID)">
                                 <div class="bg-[var(--border)] rounded-full text-[var(--primary)] p-4">
                                     <i class="fa-regular fa-face-grin m-[auto]"></i>
                                 </div>
                                 <div class="flex justify-between w-full">
                                     <div class="flex flex-col gap-1 ml-2 text-[var(--text)]">
-                                        <p class="text-xl font-small">{{user.Name}}</p>
-                                        <p class="text-sm">{{user.Contact}}</p>
+                                        <p class="text-xl font-small">OrderID {{orders.Name}}</p>
+                                        <div class="flex gap-2" ng-show="isWeb">
+                                            <p class="text-sm text-[var(--primary)]">{{orders.Price}}</p>
+                                            <p class="mb-1">•</p>
+                                            <p class="text-sm font-sm">{{orders.CreatedAt}}</p>
+                                        </div>
 
-                                    </div>
-                                    <div class="flex justify-center align-center">
-                                        <p class="text-md m-[auto] p-1 border rounded-full uppercase" ng-class="{'bg-[var(--border)] text-black' : user.RoleID === 'customer', 'bg-[var(--primary)] text-white' : user.RoleID === 'admin'}">{{user.RoleID}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -88,4 +112,3 @@
         </div>
     </div>
 </div>
-

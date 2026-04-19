@@ -11,11 +11,11 @@
             <i class="fa-regular fa-circle-user mt-2"></i>
             <p class="mt-1">Customers</p>
         </div>
-        <div class="flex gap-1 cursor-pointer" ng-click="redirectFunc()">
+        <div class="flex gap-1 cursor-pointer" ng-click="redirectFunc('Orders')">
             <i class="fa-solid fa-receipt mt-2"></i>
             <p>Orders</p>
         </div>
-        <div class="flex gap-1 cursor-pointer" ng-click="redirectFunc()">
+        <div class="flex gap-1 cursor-pointer" ng-click="redirectFunc('Reports')">
             <i class="fa-solid fa-newspaper mt-2"></i>
             <p class="mt-1">Reports</p>
         </div>
@@ -86,12 +86,7 @@
                            ng-click="removeFunction()"
                            value="Clear"
                            class="rounded-full bg-[#FF0000] border border-transparent p-3 transform hover:scale-105 transistion duration-300 text-black font-bold" />
-                    <input type="submit"
-                           ng-click="directLogin()"
-                           ng-show="showButton"
-                           value="Already have an Account?"
-                           style="animation: FadeIn 1s ease-in-out"
-                           class="rounded-full bg-[var(--border)] border border-transparent p-3 transform hover:scale-105 transistion duration-300 text-black font-bold" />
+                    
                 </div>
             </div>
             <div class="rounded-tl-full rounded-tr-full p-2 bg-white border-t-[3.5px] border-[var(--border)] text-[var(--primary)] w-[20%]">
@@ -118,10 +113,7 @@
                                         </div>
 
                                     </div>
-                                    <div class="flex justify-center align-center mr-2">
-                                        <i class="fa-solid fa-pen-to-square text-black m-auto" ng-click="saveUserFunc(user.UserID)"></i>
-                                        <i class="fa-solid fa-trash text-[#ff0000] m-auto"></i>
-                                    </div>
+                                   
                                 </div>
                             </div>
                         </div>

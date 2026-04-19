@@ -15,7 +15,7 @@ namespace LaunderTrack.Models.Tables
         public string Username { get; set; } = string.Empty;
         public string Password { get; set; } = string.Empty;
         public DateTime CreatedAt { get; set; }
-        public DateTime ModifiedAt { get; set; }
+        public DateTime? ModifiedAt { get; set; }
         public int isActive { get; set; }
 
     }

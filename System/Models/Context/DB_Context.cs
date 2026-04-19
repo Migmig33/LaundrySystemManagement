@@ -21,6 +21,7 @@ namespace LaunderTrack.Models.Context
         public virtual DbSet<Customers> tbl_customers { get; set; }
         public virtual DbSet<Orders> tbl_orders { get; set; }
         public virtual DbSet<Roles> tbl_roles { get; set; }
+        public virtual DbSet<Services> tbl_services { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -29,6 +30,7 @@ namespace LaunderTrack.Models.Context
             modelBuilder.Configurations.Add(new Maps.Customers_Map());
             modelBuilder.Configurations.Add(new Maps.Orders_Map());
             modelBuilder.Configurations.Add(new Maps.Roles_Map());
+            modelBuilder.Configurations.Add(new Maps.Services_Map());
         }
     }
 }

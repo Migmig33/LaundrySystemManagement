@@ -10,7 +10,7 @@ namespace LaunderTrack.Models.Tables
         public int ServiceTypeID { get; set; }
         public string ServiceType { get; set; } = string.Empty;
         public decimal Price { get; set; }
-        public DateTime createdAt { get; set; }
-        public DateTime modifiedAt { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime? ModifiedAt { get; set; }
     }
 }

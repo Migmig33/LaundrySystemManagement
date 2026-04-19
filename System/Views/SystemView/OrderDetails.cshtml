@@ -1,0 +1,119 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutForContent.cshtml";
+}
+<div class="fixed w-1/4 bg-[var(--primary)] h-[100%] top-0 z-10 sideBarContainer" style="animation: SlideLeft 1s ease-in-out" id="sidebar">
+    <div class="flex flex-col gap-8 text-lg font-semibold text-[var(--bg)] m-12">
+        <div class="flex gap-1 mt-10 cursor-pointer">
+            <i class="fa-solid fa-chart-area mt-2" ng-click="redirectFunc('Dashboard')"></i>
+            <p class="mt-1">DashBoard</p>
+        </div>
+        <div class="flex gap-1 cursor-pointer" ng-click="redirectFunc('Customers')">
+            <i class="fa-regular fa-circle-user mt-2"></i>
+            <p class="mt-1">Customers</p>
+        </div>
+        <div class="flex gap-1 cursor-pointer" ng-click="redirectFunc('Orders')">
+            <i class="fa-solid fa-receipt mt-2"></i>
+            <p>Orders</p>
+        </div>
+        <div class="flex gap-1 cursor-pointer" ng-click="redirectFunc('Reports')">
+            <i class="fa-solid fa-newspaper mt-2"></i>
+            <p class="mt-1">Reports</p>
+        </div>
+        <div class="flex gap-1 cursor-pointer" ng-click="redirectFunc('Index')">
+            <i class="fa-solid fa-door-open mt-2"></i>
+            <p class="mt-1">Signout </p>
+        </div>
+    </div>
+</div>
+<div ng-init="getOrderDetailsDataFunc(); getOrdersDataFunc();" class="mainContainer">
+    <div class="min-h-screen flex items-center justify-center text-white">
+        <div class="w-full max-w-[90%] p-8">
+            <h1 class="text-3xl font-bold mb-4 text-[var(--text)]">
+                Order <span class="text-[var(--primary)]">Details</span>
+            </h1>
+            <div class="flex flex-col gap-8 mb-8">
+                <form class="flex flex-wrap p-4 border border-transparent rounded-md">
+                    <div class="flex w-1/2 flex-col p-2">
+                        <div class="flex justify-between"><label for="OrderID" class="text-sm text-[var(--text-sub)] font-bold">OrderID:</label></div>
+                        <div class="rounded-md bg-[var(--border)] border-[1.5px] border-[var(--border)] p-3 focus:outline-none  focus:border-[var(--primary)] focus:bg-[var(--bg)] text-black">
+                            {{OrderID}}
+                        </div>
+
+                    </div>
+
+                    <div class="flex w-1/2 flex-col p-2">
+                        <div class="flex justify-between"><label for="Order By" class="text-sm text-[var(--text-sub)] font-bold">Ordered By: <span class="text-[#ff7276] text-md">*</span></label> <span class="text-[#ff7276] text-sm" ng-show="ContactField">Please fill this field</span></div>
+                        <select class="validate rounded-md bg-[var(--border)] border-[1.5px] border-[var(--border)] p-3 focus:outline-none  focus:border-[var(--primary)] focus:bg-[var(--bg)] text-black"
+                                ng-model="Name"
+                                ng-options="order.Name as order.Name for order in ordersData">
+                        </select>
+   
+
+                    </div>
+                    <div class="flex w-1/2 flex-col p-2">
+                        <div class="flex justify-between"><label for="Price" class="text-sm  text-[var(--text-sub)] font-bold">Price: <span class="text-[#ff7276] text-md">*</span></label> <span class="text-[#ff7276] text-sm" ng-show="UsernameField">Please fill this field</span></div>
+                        <div class="rounded-md bg-[var(--border)] border-[1.5px] border-[var(--border)] p-3 focus:outline-none  focus:border-[var(--primary)] focus:bg-[var(--bg)] text-black">
+                            {{Price}}
+                        </div>
+                               
+                    </div>
+                    <div class="flex w-1/2 flex-col p-2">
+                        <div class="flex justify-between"><label for="Quantity" class="text-sm text-[var(--text-sub)] font-bold">Quantity: <span class="text-[#ff7276] text-md">*</span></label> <span class="text-[#ff7276] text-sm" ng-show="PasswordField">Please fill this field</span></div>
+                        <input type="number"
+                               class="validate  rounded-md bg-[var(--border)] border-[1.5px] border-[var(--border)] p-3 focus:outline-none  focus:border-[var(--primary)] focus:bg-[var(--bg)] text-black"
+                               min="1"
+                               ng-model="Quantity" required />
+                    </div>
+                    <div class="flex w-full flex-col p-2">
+                        <label for="Name" class="text-sm  text-[var(--text-sub)] font-bold">Service Type:</label>
+                        <select class="validate rounded-mf bg-[var(--border)] border-[1.5px] border-[var(--border)] p-3 focus:outline-none focus:border-[var(--primary)] focus:bg-[var(--bg)] text-black"
+                                ng-model="ServiceType"
+                                ng-options="order.ServiceType as order.ServiceType for order in servicesData">
+
+                        </select>
+                    </div>
+                    <div class="flex w-full flex-col p-2">
+                        <label for="Name" class="text-sm  text-[var(--text-sub)] font-bold">is Paid?:</label>
+                        <select class="validate rounded-md bg-[var(--border)] border-[1.5px] border-[var--border)] p-3 focus:outline-none  focus:border-[var(--primary)] focus:bg-[var(--bg)] text-black"
+                                ng-model="isPaid"
+                                ng-options="o.value as o.label for o in Options">
+                           
+                        </select>
+                    </div>
+                    <div class="flex w-full flex-col p-2">
+                        <label for="Name" class="text-sm  text-[var(--text-sub)] font-bold">Finish?:</label>
+                        <select class="validate rounded-md bg-[var(--border)] border-[1.5px] border-[var--border)] p-3 focus:outline-none  focus:border-[var(--primary)] focus:bg-[var(--bg)] text-black"
+                                ng-model="isFinished"
+                                ng-options="o.value as o.label for o in Options">
+                           
+                        </select>
+                    </div>
+                    <div class="flex w-full flex-col p-2">
+                        <label for="Name" class="text-sm  text-[var(--text-sub)] font-bold">Ordered At:</label>
+                        <div class=" rounded-md bg-[var(--border)] border-[1.5px] border-[var--border)] p-3 focus:outline-none  focus:border-[var(--primary)] focus:bg-[var(--bg)] text-black">
+                            {{CreatedAt}}
+                        </div>
+                         
+                    </div>
+
+                    
+                </form>
+
+                <div class="flex flex-col gap-2">
+                    <input type="submit"
+                           ng-click="saveOrdersFunc(OrderID)"
+                           value="Save"
+                           class="rounded-full bg-[var(--primary)] border border-transparent p-3 transform hover:scale-105 transistion duration-300 text-white font-bold" />
+                    <input type="submit"
+                           ng-click="removeFunction()"
+                           value="Delete"
+                           class="rounded-full bg-[#FF0000] border border-transparent p-3 transform hover:scale-105 transistion duration-300 text-black font-bold" />
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
