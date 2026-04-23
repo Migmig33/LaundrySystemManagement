@@ -6,12 +6,32 @@
 
 
     // Fields Error Output
+    //Customer
     $scope.NameField = false;
     $scope.ContactField = false;
     $scope.RoleField = false;
     $scope.UsernameField = false;
     $scope.PasswordField = false;
+    
+    //Orders
+    $scope.NameField = false;
+    $scope.QuantityField = false;
+    $scope.ServiceField = false;
+    $scope.PaidField = false;
+
+    //Service
+    $scope.ServiceTypeField = false;
+    $scope.PriceField = false;
     hasError = false;
+
+    //Pages
+
+    $scope.Dashboard = false;
+    $scope.Customers = false;
+    $scope.Orders = false;
+    $scope.Services = false;
+    $scope.Reports = false;
+    
     window.addEventListener('resize', function () {
         $scope.$apply(function () {
             if (window.innerWidth <= 480) {
@@ -156,17 +176,23 @@
                 return window.location.href = "/SystemView/Dashboard";
             case "Customers":
                 return window.location.href = "/SystemView/Customers";
+            case "CustomerDetails":
+                return window.location.href = "/SystemView/CustomerDetails";
             case "Orders":
                 return window.location.href = "/SystemView/Orders";
             case "OrderDetails":
                 return window.location.href = "/SystemView/OrderDetails";
             case "Reports":
                 return window.location.href = "/SystemView/Reports"
+            case "Services":
+                return window.location.href = "/SystemView/Services";
             default:
                 return null;
         }
 
     }
+  
+ 
     
 
 
@@ -205,13 +231,11 @@
 
     // CONNECTED TO THE BACKEND FUNCTIONS
 
+    
+
     // Save Users/Customers
     $scope.saveUserFunc = function (id) {
-        $scope.NameField = false;
-        $scope.ContactField = false;
-        $scope.UsernameField = false;
-        $scope.PasswordField = false;
-        hasError = false;
+      
         if (!$scope.Name) { $scope.NameField = true; hasError = true; }
         if (!$scope.Contact) { $scope.ContactField = true; hasError = true; }
         if (!$scope.Username) { $scope.UsernameField = true; hasError = true; }
@@ -241,7 +265,7 @@
                 Swal.fire({
                     icon: "success",
                     title: "Success",
-                    text: "Customer Successfully Added"
+                    text: response.data
                 });
             });
             
@@ -250,10 +274,7 @@
     }
     $scope.saveOrdersFunc = function (id) {
         alert(id);
-        $scope.NameField = false;
-        $scope.QuantityField = false;
-        $scope.ServiceField = false;
-        $scope.PaidField = false;
+      
         if (!$scope.Name) { hasError = true; NameField = true }
         if (!$scope.Quantity) { hasError = true; QuantityField = true }
         if (!$scope.Name) { hasError = true; ServiceField = true }
@@ -286,6 +307,38 @@
             })
         }
     }
+    $scope.saveServicesFunc = function (id) {
+        if (!$scope.ServiceType && !$scope.DetailsServiceType) {
+            hasError = true; ServiceTypeField = true;
+        }
+        if (!$scope.Price && !$scope.DetailsPrice) {
+            hasError = true; PriceField;
+        }
+        if (hasError) {
+            Swal.fire({
+                icon: "error",
+                title: "Invalid!",
+                text: "Please fill out required field"
+            });
+        } else {
+            var serviceData = {
+                ServiceType: $scope.ServiceType || $scope.DetailsServiceType,
+                Price: $scope.Price || $scope.DetailsPrice,
+                CreatedAt: new Date(),
+                ModifiedAt: new Date()
+            };
+            var saveServiceData = service.saveServiceTypeService(serviceData, id);
+            saveServiceData.then(function (response) {
+                Swal.fire({
+                    icon: "success",
+                    title: "Success",
+                    text: response.data
+                });
+                $scope.showFormService = false;
+
+            })
+        }
+    }
     // Get Users/Customers
     $scope.getUsersDataFunc = function () {
         var getUserData = service.getUserDataService()
@@ -305,16 +358,101 @@
     $scope.getServicesDataFunc = function () {
         var getServicesData = service.getServicesDataService()
         getServicesData.then(function (returnedData) {
-            if (returnedData.data.success) {
-                $scope.servicesData = returnedData.data.data;
-            } else {
-                alert(returnedData.data.error);
-            }
+            $scope.servicesData = returnedData.data.data;
             
         })
     }
 
+    //Delete Functions
+    $scope.deleteUserFunc = function (id) {
+       
+        var deleteThisUser = service.deleteUserService(id);
+        deleteThisUser.then(function (response) {
+            if (response.data.success) {
+                Swal.fire({
+                    icon: "success",
+                    title: "Success!",
+                    text: response.data.message
+                })
+                redirectFunc("Customers");
+            } else {
+                Swal.fire({
+                    icon: "error",
+                    title: "Error",
+                    text: response.data.message
+                })
+            }
+        });
+    }
+    $scope.deleteOrderFunc = function (id) {
+
+        var deleteThisOrder = service.deleteOrderService(id);
+        deleteThisOrder.then(function (response) {
+            if (response.data.success) {
+                Swal.fire({
+                    icon: "success",
+                    title: "Success!",
+                    text: response.data.message
+                })
+                redirectFunc("Orders");
+            } else {
+                Swal.fire({
+                    icon: "error",
+                    title: "Error",
+                    text: response.data.message
+                })
+            }
+        });
+    }
+    $scope.deleteServiceFunc = function (id) {
+        var deleteThisService = service.deleteServiceTypeService(id);
+        deleteThisService.then(function (response) {
+            if (response.data.success) {
+                Swal.fire({
+                    icon: "success",
+                    title: "Success!",
+                    text: response.data.message
+                })
+                $scope.showDetailsService = false;
+            } else {
+                Swal.fire({
+                    icon: "error",
+                    title: "Error",
+                    text: response.data.message
+                    
+                })
+            }
+        });
+    }
+
     // Direct Functions
+    //View
+    $scope.directCustomerDetailsFunc = function (id) {
+        var customerDetailsData = $scope.userDatas.find(
+            items => items.CustomerID == id
+        );
+        sessionStorage.setItem("CustomerDetailsData", JSON.stringify(customerDetailsData));
+        $scope.redirectFunc("CustomerDetails");
+    }
+    $scope.getCustomerDetailsDataFunc = function () {
+        var customerDetailsData = sessionStorage.getItem("CustomerDetailsData");
+        parsedData = JSON.parse(customerDetailsData);
+        $scope.UserID = parsedData.UserID;
+        $scope.CustomerID = parsedData.CustomerID;
+        $scope.Name = parsedData.Name;
+        $scope.Contact = parsedData.Contact;
+        $scope.Address = parsedData.Address;
+        $scope.Username = parsedData.Username;
+        $scope.Password = parsedData.Password;
+        $scope.CreatedAt = parsedData.CreatedAt;
+        $scope.isActive = parsedData.isActive;
+        $scope.Options = [
+            { value:1, label: "Active" },
+            { value: 2, label: "Inactive"}
+        ]
+
+        
+    }
     $scope.directOrderDetailsFunc = function (id) {
         var orderDetailsData = $scope.ordersData.find(
             items => items.OrderID == id
@@ -323,6 +461,7 @@
         $scope.redirectFunc("OrderDetails");
 
     }
+    
 
     $scope.getOrderDetailsDataFunc = function () {
         var orderDetailsData = sessionStorage.getItem("OrderDetailsData");
@@ -340,5 +479,16 @@
             { value: 0, label: "No" }
 
         ];
+    }
+    $scope.showServiceDetails = function (id) {
+        alert(id);
+        var serviceDetailsData = $scope.servicesData.find(
+            items => items.ServiceTypeID == id
+        );
+        $scope.DetailsServiceTypeID = serviceDetailsData.ServiceTypeID;
+        $scope.DetailsServiceType = serviceDetailsData.ServiceType;
+        $scope.DetailsPrice = serviceDetailsData.Price;
+        $scope.DetailsCreatedAt = serviceDetailsData.CreatedAt;
+        $scope.showDetailsService = true;
     }
 });

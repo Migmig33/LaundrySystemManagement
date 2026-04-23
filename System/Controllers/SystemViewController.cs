@@ -41,6 +41,10 @@ namespace LaunderTrack.Controllers
         {
             return View();
         }
+        public ActionResult CustomerDetails()
+        {
+            return View();
+        }
         public ActionResult Orders()
         {
             return View();
@@ -53,7 +57,12 @@ namespace LaunderTrack.Controllers
         {
             return View();
         }
+        public ActionResult Services()
+        {
+            return View();
+        }
        
+        // POST API
         public string SaveCustomers(Users user_data, int? id)
         {
         
@@ -86,7 +95,7 @@ namespace LaunderTrack.Controllers
 
                         var newCustomerData = new Customers
                         {
-                            UserID = user_data.UserID,
+                            UserID = newUserData.UserID,
                             RoleID = user_data.RoleID,
                             CreatedAt = DateTime.Now,
                             ModifiedAt = DateTime.Now
@@ -108,7 +117,7 @@ namespace LaunderTrack.Controllers
                     }
                 }
                 
-                return "success";
+                return "Customer Successfully Saved";
                 
                
             }
@@ -153,7 +162,7 @@ namespace LaunderTrack.Controllers
                         connect.SaveChanges();
                     }
                 }
-                return "Success";
+                return "Order Successfully Saved";
 
             }catch(Exception ex)
             {
@@ -161,6 +170,152 @@ namespace LaunderTrack.Controllers
             }
 
         }
+        public string SaveServices(Services service_data, int? id)
+        {
+            try
+            {
+                using (var connect = new DB_Context())
+                {
+                    var getDataIndex = connect.tbl_services.Where(x => x.ServiceTypeID == id).FirstOrDefault();
+                    if (getDataIndex == null)
+                    {
+                        // if index is null insert
+                        var newService = new Services
+                        {
+                            ServiceType = service_data.ServiceType,
+                            Price = service_data.Price,
+                            CreatedAt = service_data.CreatedAt,
+                            ModifiedAt = service_data.ModifiedAt
+                        };
+                        connect.tbl_services.Add(newService);
+                        connect.SaveChanges();
+                    }
+                    else
+                    {
+                        // if index is not null update
+                        getDataIndex.ServiceType = service_data.ServiceType;
+                        getDataIndex.Price = service_data.Price;
+                        getDataIndex.ModifiedAt = service_data.ModifiedAt;
+                        connect.SaveChanges();
+                    }
+                }
+                return "Service Successfully Saved";
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandling(ex);
+            }
+        }
+        public string SaveFeedbacks(Feedbacks feedback_data, int? id)
+        {
+            try
+            {
+                using(var connect = new DB_Context())
+                {
+                    var getDataIndex = connect.tbl_feedbacks.Where(x => x.FeedbackID == id).FirstOrDefault();
+                    if(getDataIndex == null)
+                    {
+                        // if index is null insert
+                        var newFeedback = new Feedbacks
+                        {
+                            CustomerID = feedback_data.CustomerID,
+                            FeedbackDesc = feedback_data.FeedbackDesc,
+                            CreatedAt = feedback_data.CreatedAt,
+                            ModifiedAt = feedback_data.ModifiedAt
+                        };
+                        connect.tbl_feedbacks.Add(newFeedback);
+                        connect.SaveChanges();
+                    }
+                    else
+                    {
+                        // if index is not null update
+                        getDataIndex.CustomerID = feedback_data.CustomerID;
+                        getDataIndex.FeedbackDesc = feedback_data.FeedbackDesc;
+                        getDataIndex.ModifiedAt = feedback_data.ModifiedAt;
+                        connect.SaveChanges();
+                    }
+                }
+                return "Feedback Successfully Saved";
+
+            }catch(Exception ex)
+            {
+                return ErrorHandling(ex);
+            }
+        }
+
+        // DELETE API
+        public JsonResult DeleteUser(int? data)
+        {
+            try
+            {
+                using(var connect = new DB_Context())
+                {
+                    var getUserIndex = connect.tbl_users.Where(x => x.UserID == data).FirstOrDefault();
+                    if(getUserIndex != null)
+                    {
+                        connect.tbl_users.Remove(getUserIndex);
+                        connect.SaveChanges();
+                        return Json(new { success = true, message = "Customer Successfully Deleted" });
+                    }
+                    else
+                    {
+                        return Json(new { success = false, message = "Customer not Found" });
+                    }
+                }
+
+            } 
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = ErrorHandling(ex) });
+            }
+        }
+
+        public JsonResult DeleteOrder(int? data)
+        {
+            try
+            {
+                using(var connect = new DB_Context())
+                {
+                    var getDataIndex = connect.tbl_orders.Where(x => x.OrderID == data).FirstOrDefault();
+                    if(getDataIndex != null)
+                    {
+                        connect.tbl_orders.Remove(getDataIndex);
+                        connect.SaveChanges();
+                        return Json(new { success = true, message = "Order Successfully Deleted" });
+                    }
+                    else {
+                        return Json(new { success = false, message = "Order not Found" });
+                    }
+                }
+            }catch(Exception ex)
+            {
+                return Json(new { error = true, message = ErrorHandling(ex) });
+            }
+        }
+        public JsonResult DeleteService(int? data)
+        {
+            try
+            {
+                using(var connect = new DB_Context())
+                {
+                    var getDataIndex = connect.tbl_services.Where(x => x.ServiceTypeID == data).FirstOrDefault();
+                    if(getDataIndex != null)
+                    {
+                        connect.tbl_services.Remove(getDataIndex);
+                        connect.SaveChanges();
+                        return Json(new { success = true, message = "Service Successfully Delete" });
+                    }
+                    else
+                    {
+                        return Json(new { success = false, message = "Service not Found" });
+                    }
+                }
+            }catch(Exception ex)
+            {
+                return Json(new { success = false, message = ErrorHandling(ex) });
+            }
+        }
+        //GET API
 
         public JsonResult GetCustomers()
         {
@@ -185,6 +340,7 @@ namespace LaunderTrack.Controllers
                                     Contact = users.Contact,
                                     Address = users.Address,
                                     RoleName = roles.RoleName,
+                                    isActive = users.isActive,
                                     CreatedAt = users.CreatedAt,
                                     Username = users.Username,
                                     Password = users.Password
@@ -198,7 +354,7 @@ namespace LaunderTrack.Controllers
             catch (Exception ex)
             {
                 string error = ErrorHandling(ex);
-                return Json(new { success = false, error = error }, JsonRequestBehavior.AllowGet);
+                return Json(new { success = false, message = error }, JsonRequestBehavior.AllowGet);
             }
         }
 
@@ -243,7 +399,7 @@ namespace LaunderTrack.Controllers
             }catch(Exception ex)
             {
                 string error = ErrorHandling(ex);
-                return Json(new { success = false, error = error }, JsonRequestBehavior.AllowGet);
+                return Json(new { success = false, message = error }, JsonRequestBehavior.AllowGet);
             }
         }
         public JsonResult GetServices()
@@ -252,7 +408,14 @@ namespace LaunderTrack.Controllers
             {
                 using (var connect = new DB_Context()) 
                 {
-                    var data = connect.tbl_services.Select(x =>x).ToList();
+                    var raw = connect.tbl_services.Select(x =>x).ToList();
+                    var data = raw.Select(o => new
+                    {
+                        ServiceTypeID = o.ServiceTypeID,
+                        ServiceType = o.ServiceType,
+                        Price = o.Price,
+                        CreatedAt = o.CreatedAt.ToString("yyyy-MM-dd HH:mm:ss")
+                    });
                     return Json(new {success = true, data = data}, JsonRequestBehavior.AllowGet);
                 }
                 
@@ -260,7 +423,7 @@ namespace LaunderTrack.Controllers
             catch(Exception ex)
             {
                 string error = ErrorHandling(ex);
-                return Json(new { success = false, error = error }, JsonRequestBehavior.AllowGet);
+                return Json(new { success = false, message = error }, JsonRequestBehavior.AllowGet);
             }
         }
         public string ErrorHandling(Exception ex)

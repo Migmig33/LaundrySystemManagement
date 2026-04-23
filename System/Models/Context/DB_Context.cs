@@ -22,6 +22,7 @@ namespace LaunderTrack.Models.Context
         public virtual DbSet<Orders> tbl_orders { get; set; }
         public virtual DbSet<Roles> tbl_roles { get; set; }
         public virtual DbSet<Services> tbl_services { get; set; }
+        public virtual DbSet<Feedbacks> tbl_feedbacks { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -31,6 +32,7 @@ namespace LaunderTrack.Models.Context
             modelBuilder.Configurations.Add(new Maps.Orders_Map());
             modelBuilder.Configurations.Add(new Maps.Roles_Map());
             modelBuilder.Configurations.Add(new Maps.Services_Map());
+            modelBuilder.Configurations.Add(new Maps.Feedbacks_Map());
         }
     }
 }

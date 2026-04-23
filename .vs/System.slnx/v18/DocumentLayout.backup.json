@@ -7,68 +7,108 @@
       "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|solutionrelative:system\\scripts\\scripts\\controllerscript.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\system\\views\\systemview\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|solutionrelative:system\\views\\systemview\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\system\\views\\systemview\\orders.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|solutionrelative:system\\views\\systemview\\orders.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\system\\controllers\\systemviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|c:\\users\\me\\onedrive\\desktop\\skul\\laundrymanagementsystem\\system\\system\\controllers\\systemviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|solutionrelative:system\\controllers\\systemviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|c:\\users\\me\\onedrive\\desktop\\skul\\laundrymanagementsystem\\system\\system\\views\\systemview\\orderdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|solutionrelative:system\\views\\systemview\\orderdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\system\\views\\systemview\\services.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|solutionrelative:system\\views\\systemview\\services.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\system\\views\\systemview\\customers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|solutionrelative:system\\views\\systemview\\customers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|c:\\users\\me\\onedrive\\desktop\\skul\\laundrymanagementsystem\\system\\system\\models\\tables\\roles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|solutionrelative:system\\models\\tables\\roles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\LaunderTrack.csproj|C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\system\\controllers\\systemviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\LaunderTrack.csproj|solutionrelative:system\\controllers\\systemviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\system\\scripts\\scripts\\servicescript.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|solutionrelative:system\\scripts\\scripts\\servicescript.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|c:\\users\\me\\onedrive\\desktop\\skul\\laundrymanagementsystem\\system\\system\\models\\tables\\feedbacks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|solutionrelative:system\\models\\tables\\feedbacks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|c:\\users\\me\\onedrive\\desktop\\skul\\laundrymanagementsystem\\system\\system\\models\\tables\\customers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|solutionrelative:system\\models\\tables\\customers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|c:\\users\\me\\onedrive\\desktop\\skul\\laundrymanagementsystem\\system\\system\\models\\tables\\orders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|solutionrelative:system\\models\\tables\\orders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\system\\models\\tables\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|solutionrelative:system\\models\\tables\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|c:\\users\\me\\onedrive\\desktop\\skul\\laundrymanagementsystem\\system\\system\\models\\context\\db_context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|solutionrelative:system\\models\\context\\db_context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|c:\\users\\me\\onedrive\\desktop\\skul\\laundrymanagementsystem\\system\\system\\models\\maps\\services_map.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\system\\models\\maps\\services_map.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|solutionrelative:system\\models\\maps\\services_map.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|c:\\users\\me\\onedrive\\desktop\\skul\\laundrymanagementsystem\\system\\system\\models\\maps\\users_map.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|solutionrelative:system\\models\\maps\\users_map.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\system\\models\\tables\\customers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|solutionrelative:system\\models\\tables\\customers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\system\\views\\systemview\\customerdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|solutionrelative:system\\views\\systemview\\customerdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\system\\views\\systemview\\customers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|solutionrelative:system\\views\\systemview\\customers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\system\\views\\systemview\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|solutionrelative:system\\views\\systemview\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\system\\views\\shared\\_layoutforcontent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|solutionrelative:system\\views\\shared\\_layoutforcontent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\system\\models\\maps\\customers_map.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|solutionrelative:system\\models\\maps\\customers_map.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\system\\views\\systemview\\orders.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|solutionrelative:system\\views\\systemview\\orders.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|c:\\users\\me\\onedrive\\desktop\\skul\\laundrymanagementsystem\\system\\system\\views\\shared\\_layoutpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|solutionrelative:system\\views\\shared\\_layoutpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\system\\models\\tables\\orders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|solutionrelative:system\\models\\tables\\orders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\system\\views\\systemview\\orderdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|solutionrelative:system\\views\\systemview\\orderdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\system\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|solutionrelative:system\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\system\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|solutionrelative:system\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\system\\views\\systemview\\reports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|solutionrelative:system\\views\\systemview\\reports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\system\\views\\systemview\\registration.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|solutionrelative:system\\views\\systemview\\registration.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\system\\views\\systemview\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|solutionrelative:system\\views\\systemview\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\system\\views\\systemview\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|solutionrelative:system\\views\\systemview\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\system\\views\\systemview\\home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|solutionrelative:system\\views\\systemview\\home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\system\\models\\context\\db_context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|solutionrelative:system\\models\\context\\db_context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\system\\models\\tables\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|solutionrelative:system\\models\\tables\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\system\\models\\tables\\roles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|solutionrelative:system\\models\\tables\\roles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\system\\models\\tables\\feedbacks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|solutionrelative:system\\models\\tables\\feedbacks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\system\\models\\maps\\users_map.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|solutionrelative:system\\models\\maps\\users_map.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\system\\scripts\\scripts\\modulescript.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
@@ -77,10 +117,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\system\\scripts\\scripts\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\System.csproj|solutionrelative:system\\scripts\\scripts\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\LaunderTrack.csproj|C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\system\\controllers\\systemviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0BC6E4D4-0F3B-4EFE-ACEF-90AE943A51B4}|System\\LaunderTrack.csproj|solutionrelative:system\\controllers\\systemviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -90,7 +126,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 14,
           "Children": [
             {
               "$type": "Bookmark",
@@ -122,15 +158,90 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "OrderDetails.cshtml",
-              "DocumentMoniker": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Views\\SystemView\\OrderDetails.cshtml",
-              "RelativeDocumentMoniker": "System\\Views\\SystemView\\OrderDetails.cshtml",
-              "ToolTip": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Views\\SystemView\\OrderDetails.cshtml",
-              "RelativeToolTip": "System\\Views\\SystemView\\OrderDetails.cshtml",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAswGcAAAA0AAAAAAAAAA==",
+              "DocumentIndex": 13,
+              "Title": "_LayoutPage.cshtml",
+              "DocumentMoniker": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Views\\Shared\\_LayoutPage.cshtml",
+              "RelativeDocumentMoniker": "System\\Views\\Shared\\_LayoutPage.cshtml",
+              "ToolTip": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Views\\Shared\\_LayoutPage.cshtml",
+              "RelativeToolTip": "System\\Views\\Shared\\_LayoutPage.cshtml",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-19T18:11:39.036Z",
+              "WhenOpened": "2026-04-23T16:52:53.511Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CustomerDetails.cshtml",
+              "DocumentMoniker": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Views\\SystemView\\CustomerDetails.cshtml",
+              "RelativeDocumentMoniker": "System\\Views\\SystemView\\CustomerDetails.cshtml",
+              "ToolTip": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Views\\SystemView\\CustomerDetails.cshtml",
+              "RelativeToolTip": "System\\Views\\SystemView\\CustomerDetails.cshtml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAC0AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-23T14:13:22.05Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Views\\SystemView\\Login.cshtml",
+              "RelativeDocumentMoniker": "System\\Views\\SystemView\\Login.cshtml",
+              "ToolTip": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Views\\SystemView\\Login.cshtml",
+              "RelativeToolTip": "System\\Views\\SystemView\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-23T13:35:16.505Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Views\\SystemView\\Index.cshtml",
+              "RelativeDocumentMoniker": "System\\Views\\SystemView\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Views\\SystemView\\Index.cshtml",
+              "RelativeToolTip": "System\\Views\\SystemView\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-23T13:35:14.653Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Home.cshtml",
+              "DocumentMoniker": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Views\\SystemView\\Home.cshtml",
+              "RelativeDocumentMoniker": "System\\Views\\SystemView\\Home.cshtml",
+              "ToolTip": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Views\\SystemView\\Home.cshtml",
+              "RelativeToolTip": "System\\Views\\SystemView\\Home.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-23T13:34:57.925Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Customers.cshtml",
+              "DocumentMoniker": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Views\\SystemView\\Customers.cshtml",
+              "RelativeDocumentMoniker": "System\\Views\\SystemView\\Customers.cshtml",
+              "ToolTip": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Views\\SystemView\\Customers.cshtml",
+              "RelativeToolTip": "System\\Views\\SystemView\\Customers.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-17T09:54:48.877Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "_LayoutForContent.cshtml",
+              "DocumentMoniker": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Views\\Shared\\_LayoutForContent.cshtml",
+              "RelativeDocumentMoniker": "System\\Views\\Shared\\_LayoutForContent.cshtml",
+              "ToolTip": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Views\\Shared\\_LayoutForContent.cshtml",
+              "RelativeToolTip": "System\\Views\\Shared\\_LayoutForContent.cshtml",
+              "ViewState": "AgIAAM4AAAAAAAAAAADwv6QAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-20T03:36:02.763Z",
               "EditorCaption": ""
             },
             {
@@ -141,7 +252,7 @@
               "RelativeDocumentMoniker": "System\\Scripts\\scripts\\ControllerScript.js",
               "ToolTip": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Scripts\\scripts\\ControllerScript.js",
               "RelativeToolTip": "System\\Scripts\\scripts\\ControllerScript.js",
-              "ViewState": "AgIAAP8AAAAAAAAAAAAcwBABAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAADsBAAAAAAAAAAAAAE8BAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2026-04-17T10:07:09.2Z",
               "EditorCaption": ""
@@ -149,58 +260,145 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Dashboard.cshtml",
-              "DocumentMoniker": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Views\\SystemView\\Dashboard.cshtml",
-              "RelativeDocumentMoniker": "System\\Views\\SystemView\\Dashboard.cshtml",
-              "ToolTip": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Views\\SystemView\\Dashboard.cshtml",
-              "RelativeToolTip": "System\\Views\\SystemView\\Dashboard.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-17T09:54:48.135Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Orders.cshtml",
-              "DocumentMoniker": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Views\\SystemView\\Orders.cshtml",
-              "RelativeDocumentMoniker": "System\\Views\\SystemView\\Orders.cshtml",
-              "ToolTip": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Views\\SystemView\\Orders.cshtml",
-              "RelativeToolTip": "System\\Views\\SystemView\\Orders.cshtml",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAADkAAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-17T10:00:06.578Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "SystemViewController.cs",
               "DocumentMoniker": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Controllers\\SystemViewController.cs",
               "RelativeDocumentMoniker": "System\\Controllers\\SystemViewController.cs",
-              "ToolTip": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Controllers\\SystemViewController.cs*",
-              "RelativeToolTip": "System\\Controllers\\SystemViewController.cs*",
-              "ViewState": "AgIAAHUAAAAAAAAAAAAAAIgAAAA+AAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Controllers\\SystemViewController.cs",
+              "RelativeToolTip": "System\\Controllers\\SystemViewController.cs",
+              "ViewState": "AgIAACYBAAAAAAAAAAAQwDcBAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-17T09:54:56.445Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Customers.cshtml",
-              "DocumentMoniker": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Views\\SystemView\\Customers.cshtml",
-              "RelativeDocumentMoniker": "System\\Views\\SystemView\\Customers.cshtml",
-              "ToolTip": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Views\\SystemView\\Customers.cshtml",
-              "RelativeToolTip": "System\\Views\\SystemView\\Customers.cshtml",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Services.cshtml",
+              "DocumentMoniker": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Views\\SystemView\\Services.cshtml",
+              "RelativeDocumentMoniker": "System\\Views\\SystemView\\Services.cshtml",
+              "ToolTip": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Views\\SystemView\\Services.cshtml",
+              "RelativeToolTip": "System\\Views\\SystemView\\Services.cshtml",
+              "ViewState": "AgIAAGUAAAAAAAAAAAAAAHgAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-17T09:54:48.877Z",
+              "WhenOpened": "2026-04-20T03:05:54.332Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 12,
+              "Title": "Orders.cshtml",
+              "DocumentMoniker": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Views\\SystemView\\Orders.cshtml",
+              "RelativeDocumentMoniker": "System\\Views\\SystemView\\Orders.cshtml",
+              "ToolTip": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Views\\SystemView\\Orders.cshtml",
+              "RelativeToolTip": "System\\Views\\SystemView\\Orders.cshtml",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAFAAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-17T10:00:06.578Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ServiceScript.js",
+              "DocumentMoniker": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Scripts\\scripts\\ServiceScript.js",
+              "RelativeDocumentMoniker": "System\\Scripts\\scripts\\ServiceScript.js",
+              "ToolTip": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Scripts\\scripts\\ServiceScript.js",
+              "RelativeToolTip": "System\\Scripts\\scripts\\ServiceScript.js",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAcwEsAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-04-17T10:07:06.231Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Users.cs",
+              "DocumentMoniker": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Models\\Tables\\Users.cs",
+              "RelativeDocumentMoniker": "System\\Models\\Tables\\Users.cs",
+              "ToolTip": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Models\\Tables\\Users.cs",
+              "RelativeToolTip": "System\\Models\\Tables\\Users.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T09:58:42.746Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "DB_Context.cs",
+              "DocumentMoniker": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Models\\Context\\DB_Context.cs",
+              "RelativeDocumentMoniker": "System\\Models\\Context\\DB_Context.cs",
+              "ToolTip": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Models\\Context\\DB_Context.cs",
+              "RelativeToolTip": "System\\Models\\Context\\DB_Context.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAA+wBIAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-19T14:58:35.435Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Views\\SystemView\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "System\\Views\\SystemView\\Dashboard.cshtml",
+              "ToolTip": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Views\\SystemView\\Dashboard.cshtml",
+              "RelativeToolTip": "System\\Views\\SystemView\\Dashboard.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-17T09:54:48.135Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Customers_Map.cs",
+              "DocumentMoniker": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Models\\Maps\\Customers_Map.cs",
+              "RelativeDocumentMoniker": "System\\Models\\Maps\\Customers_Map.cs",
+              "ToolTip": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Models\\Maps\\Customers_Map.cs",
+              "RelativeToolTip": "System\\Models\\Maps\\Customers_Map.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T03:26:13.973Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "OrderDetails.cshtml",
+              "DocumentMoniker": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Views\\SystemView\\OrderDetails.cshtml",
+              "RelativeDocumentMoniker": "System\\Views\\SystemView\\OrderDetails.cshtml",
+              "ToolTip": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Views\\SystemView\\OrderDetails.cshtml",
+              "RelativeToolTip": "System\\Views\\SystemView\\OrderDetails.cshtml",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAAAFMAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-19T18:11:39.036Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Reports.cshtml",
+              "DocumentMoniker": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Views\\SystemView\\Reports.cshtml",
+              "RelativeDocumentMoniker": "System\\Views\\SystemView\\Reports.cshtml",
+              "ToolTip": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Views\\SystemView\\Reports.cshtml",
+              "RelativeToolTip": "System\\Views\\SystemView\\Reports.cshtml",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAUwFkAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-20T03:18:13.263Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Registration.cshtml",
+              "DocumentMoniker": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Views\\SystemView\\Registration.cshtml",
+              "RelativeDocumentMoniker": "System\\Views\\SystemView\\Registration.cshtml",
+              "ToolTip": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Views\\SystemView\\Registration.cshtml",
+              "RelativeToolTip": "System\\Views\\SystemView\\Registration.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-20T03:00:28.514Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
               "Title": "Roles.cs",
               "DocumentMoniker": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Models\\Tables\\Roles.cs",
               "RelativeDocumentMoniker": "System\\Models\\Tables\\Roles.cs",
@@ -208,25 +406,11 @@
               "RelativeToolTip": "System\\Models\\Tables\\Roles.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-19T16:46:49.173Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-19T16:46:49.173Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ServiceScript.js",
-              "DocumentMoniker": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Scripts\\scripts\\ServiceScript.js",
-              "RelativeDocumentMoniker": "System\\Scripts\\scripts\\ServiceScript.js",
-              "ToolTip": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Scripts\\scripts\\ServiceScript.js",
-              "RelativeToolTip": "System\\Scripts\\scripts\\ServiceScript.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-04-17T10:07:06.231Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 25,
               "Title": "Feedbacks.cs",
               "DocumentMoniker": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Models\\Tables\\Feedbacks.cs",
               "RelativeDocumentMoniker": "System\\Models\\Tables\\Feedbacks.cs",
@@ -234,12 +418,11 @@
               "RelativeToolTip": "System\\Models\\Tables\\Feedbacks.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-19T16:47:03.488Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-19T16:47:03.488Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 6,
               "Title": "Customers.cs",
               "DocumentMoniker": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Models\\Tables\\Customers.cs",
               "RelativeDocumentMoniker": "System\\Models\\Tables\\Customers.cs",
@@ -252,20 +435,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Users.cs",
-              "DocumentMoniker": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Models\\Tables\\Users.cs",
-              "RelativeDocumentMoniker": "System\\Models\\Tables\\Users.cs",
-              "ToolTip": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Models\\Tables\\Users.cs",
-              "RelativeToolTip": "System\\Models\\Tables\\Users.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T09:58:42.746Z",
+              "DocumentIndex": 16,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Web.config",
+              "RelativeDocumentMoniker": "System\\Web.config",
+              "ToolTip": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Web.config",
+              "RelativeToolTip": "System\\Web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2026-04-17T12:14:12.392Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "Orders.cs",
               "DocumentMoniker": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Models\\Tables\\Orders.cs",
               "RelativeDocumentMoniker": "System\\Models\\Tables\\Orders.cs",
@@ -278,20 +461,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "DB_Context.cs",
-              "DocumentMoniker": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Models\\Context\\DB_Context.cs",
-              "RelativeDocumentMoniker": "System\\Models\\Context\\DB_Context.cs",
-              "ToolTip": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Models\\Context\\DB_Context.cs",
-              "RelativeToolTip": "System\\Models\\Context\\DB_Context.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAA1wBcAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-19T14:58:35.435Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 5,
               "Title": "Services_Map.cs",
               "DocumentMoniker": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Models\\Maps\\Services_Map.cs",
               "RelativeDocumentMoniker": "System\\Models\\Maps\\Services_Map.cs",
@@ -304,7 +474,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 26,
               "Title": "Users_Map.cs",
               "DocumentMoniker": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Models\\Maps\\Users_Map.cs",
               "RelativeDocumentMoniker": "System\\Models\\Maps\\Users_Map.cs",
@@ -312,37 +482,11 @@
               "RelativeToolTip": "System\\Models\\Maps\\Users_Map.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T14:50:30.166Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-17T14:50:30.166Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Web.config",
-              "DocumentMoniker": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Web.config",
-              "RelativeDocumentMoniker": "System\\Web.config",
-              "ToolTip": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Web.config",
-              "RelativeToolTip": "System\\Web.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2026-04-17T12:14:12.392Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "packages.config",
-              "DocumentMoniker": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\packages.config",
-              "RelativeDocumentMoniker": "System\\packages.config",
-              "ToolTip": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\packages.config",
-              "RelativeToolTip": "System\\packages.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2026-04-17T12:14:13.476Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 27,
               "Title": "ModuleScript.js",
               "DocumentMoniker": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Scripts\\scripts\\ModuleScript.js",
               "RelativeDocumentMoniker": "System\\Scripts\\scripts\\ModuleScript.js",
@@ -354,7 +498,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 28,
               "Title": "script.js",
               "DocumentMoniker": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Scripts\\scripts\\script.js",
               "RelativeDocumentMoniker": "System\\Scripts\\scripts\\script.js",
@@ -366,7 +510,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 3,
               "Title": "SystemViewController.cs",
               "DocumentMoniker": "C:\\Users\\ME\\OneDrive\\Desktop\\skul\\LaundryManagementSystem\\System\\System\\Controllers\\SystemViewController.cs",
               "RelativeDocumentMoniker": "System\\Controllers\\SystemViewController.cs",

@@ -1,31 +1,8 @@
 ﻿@{
     Layout = "~/Views/Shared/_LayoutForContent.cshtml";
 }
-<div class="fixed w-1/4 bg-[var(--primary)] h-[100%] top-0 z-10 sideBarContainer" style="animation: SlideLeft 1s ease-in-out" id="sidebar" >
-    <div class="flex flex-col gap-8 text-lg font-semibold text-[var(--bg)] m-12">
-        <div class="flex gap-1 mt-10 cursor-pointer">
-            <i class="fa-solid fa-chart-area mt-2"></i>
-            <p class="mt-1">DashBoard</p>
-        </div>
-        <div class="flex gap-1 cursor-pointer" ng-click="redirectFunc('Customers')">
-            <i class="fa-regular fa-circle-user mt-2"></i>
-            <p class="mt-1">Customers</p>
-        </div>
-        <div class="flex gap-1 cursor-pointer" ng-click="redirectFunc('Orders')">
-            <i class="fa-solid fa-receipt mt-2"></i>
-            <p>Orders</p>
-        </div>
-        <div class="flex gap-1 cursor-pointer" ng-click="redirectFunc('Reports')">
-            <i class="fa-solid fa-newspaper mt-2"></i>
-            <p class="mt-1">Reports</p>
-        </div>
-        <div class="flex gap-1 cursor-pointer" ng-click="redirectFunc('Index')">
-            <i class="fa-solid fa-door-open mt-2"></i>
-            <p class="mt-1">Signout </p>
-        </div>
-    </div>
-</div>
-<div ng-init="getData(); getLoginDataFunc(); getUsersDataFunc();" class="mainContainer">
+
+<div ng-init="getData(); getLoginDataFunc(); getUsersDataFunc(); currentPage = 'Dashboard';" class="mainContainer">
     <div class="min-h-screen flex justify-center text-white">
         <div class="w-full max-w-[90%] p-8" style="animation: FadeIn 1s ease-in-out">
             <h1 class="text-3xl font-bold mb-8 text-[var(--text)]">Welcome Boss <span class="text-[var(--primary)]">{{UserInfo.Name}}</span>!</h1>
@@ -61,21 +38,34 @@
                     <p ng-show="isWeb" class="text-2xl font-bold">List</p>
                 </div>
             </div>
-            <div class="flex flex-col items-center gap-1">
-                <div class="rounded-md bg-white border border-transparent w-full">
-                    <div class="m-8">
-                        <div ng-repeat="user in userDatas" class="transform hover:scale-105 transition duration-700">
-                            <div class="border-b-[2.5px] border-[var(--border)] rounded-full font-bold flex p-2">
-                                <div class="bg-[var(--border)] rounded-full text-[var(--primary)] p-4">
-                                    <i class="fa-regular fa-face-grin m-[auto]"></i>
-                                </div>
-                                <div class="flex justify-between w-full">
-                                    <div class="flex flex-col gap-1 ml-2 text-[var(--text)]">
-                                        <p class="text-xl font-small">{{user.Name}}</p>
-                                        <p class="text-sm">{{user.Contact}}</p>
+            <div class="flex flex-col items-center gap-3">
+                <div class="w-full bg-white rounde-xl shadow-sm">
+                    <div class="p-6 space-y-3">
+                        <div ng-repeat="user in userDatas"
+                             class="flex items-center justify-between p-4 rounded-xl border border-gray-100
+                             hover:shadow-md hover:-translate-y-1 transistion-all duration-300">
 
-                                    </div>
+                            <!--Info & icon-->
+                            <div class="flex items-center gap-3">
+                            <div class="bg-[var(--border)] text-[var(--primary)] rounded-full p-3">
+                                <i class="fa-regular fa-face-grin w-5 h-5 flex items-center justify-center"></i>
+                            </div>
+
+                                <div class="flex flex-col">
+                                    <p class="text-base font-semibold text-[var(--text)]">
+                                        {{user.Name}}
+                                    </p>
+                                    <p class="text-sm text-gray-500">
+                                        {{user.Contact}}
+                                    </p>
                                 </div>
+
+                            </div>
+
+                            <!--Status-->
+                            <div class="px-3 py-1 rounded-full text-sm font-md
+                                 ng-class: user.isActive == 1 ? 'bg-blue-100 text-blue-700' : 'bg-gray-200 text-gray-600'">
+                                {{user.isActive == 1 ? 'Active' : 'Inactive'}}
                             </div>
                         </div>
                     </div>

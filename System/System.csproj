@@ -1066,6 +1066,9 @@
     <Content Include="Views\SystemView\Orders.cshtml" />
     <Content Include="Views\Shared\_LayoutForContent.cshtml" />
     <Content Include="Views\SystemView\OrderDetails.cshtml" />
+    <Content Include="Views\SystemView\Services.cshtml" />
+    <Content Include="Views\SystemView\Reports.cshtml" />
+    <Content Include="Views\SystemView\CustomerDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

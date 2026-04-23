@@ -6,6 +6,8 @@
     <title>@ViewBag.Title</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
@@ -86,11 +88,33 @@
             }
         }
 
+        @@keyframes ShowIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @@keyframes ShowOut {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
+
+
         .boxShadow {
             box-shadow: -6px 4px 6px rgba(0, 0, 0, 0.2);
         }
 
         .mainContainer {
+            animation: SlideDown 1s ease-in-out;
             margin-left: calc(25% + 20px);
             margin-top: calc(5% + 5px);
         }
@@ -111,6 +135,15 @@
                 margin-top: calc(15% + 10px);
             }
         }
+
+        .showForm {
+            animation: ShowIn 0.3s ease-in-out;
+            z-index: 9999;
+        }
+
+        .inputBox {
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+        }
     </style>
     <nav class="fixed top-0 w-full bg-[var(--primary)] p-3 font-bold text-3xl cursor-pointer h-[10%] z-20 "
          style="animation: SlideDown 0.5s ease-in-out; ">
@@ -118,6 +151,66 @@
             <h1 class=" text-[var(--text)] transform hover:scale-105 transistion duration-300" style="animation: SlideLeft 0.8s ease-in-out" ng-click="openMenuFunc()" id="menubar">launder</h1><span class="text-[var(--bg)]" style="animation: SlideDown 2s ease-in-out">Tr<span><i class="fa-solid fa-shirt text-lg"></i></span>ck</span>
         </div>
     </nav>
+    <div class="fixed w-1/4 bg-[var(--primary)] h-full top-0 z-10 sideBarContainer"
+         style="animation: SlideLeft 1s ease-in-out"
+         id="sidebar">
+
+
+        <!-- Nav Items -->
+        <div class="flex flex-col mt-12 px-6 py-6 gap-1 text-[var(--bg)]">
+
+            <div class="flex items-center gap-3 cursor-pointer px-4 py-3 rounded-md transition-all duration-200"
+                 ng-click="redirectFunc('Dashboard')"
+                 ng-class="{'bg-white text-[var(--primary)] font-semibold': currentPage == 'Dashboard',
+                        'hover:bg-white/10': currentPage != 'Dashboard'}">
+                <i class="fa-solid fa-chart-area w-5 text-center"></i>
+                <span class="text-sm font-medium">Dashboard</span>
+            </div>
+
+            <div class="flex items-center gap-3 cursor-pointer px-4 py-3 rounded-md transition-all duration-200"
+                 ng-click="redirectFunc('Customers')"
+                 ng-class="{'bg-white text-[var(--primary)] font-semibold': currentPage == 'Customers',
+                        'hover:bg-white/10': currentPage != 'Customers'}">
+                <i class="fa-regular fa-circle-user w-5 text-center"></i>
+                <span class="text-sm font-medium">Customers</span>
+            </div>
+
+            <div class="flex items-center gap-3 cursor-pointer px-4 py-3 rounded-md transition-all duration-200"
+                 ng-click="redirectFunc('Orders')"
+                 ng-class="{'bg-white text-[var(--primary)] font-semibold': currentPage == 'Orders',
+                        'hover:bg-white/10': currentPage != 'Orders'}">
+                <i class="fa-solid fa-basket-shopping w-5 text-center"></i>
+                <span class="text-sm font-medium">Orders</span>
+            </div>
+
+            <div class="flex items-center gap-3 cursor-pointer px-4 py-3 rounded-md transition-all duration-200"
+                 ng-click="redirectFunc('Services')"
+                 ng-class="{'bg-white text-[var(--primary)] font-semibold': currentPage == 'Services',
+                        'hover:bg-white/10': currentPage != 'Services'}">
+                <i class="fa-solid fa-jug-detergent w-5 text-center"></i>
+                <span class="text-sm font-medium">Services</span>
+            </div>
+
+            <div class="flex items-center gap-3 cursor-pointer px-4 py-3 rounded-md transition-all duration-200"
+                 ng-click="redirectFunc('Reports')"
+                 ng-class="{'bg-white text-[var(--primary)] font-semibold': currentPage == 'Reports',
+                        'hover:bg-white/10': currentPage != 'Reports'}">
+                <i class="fa-solid fa-newspaper w-5 text-center"></i>
+                <span class="text-sm font-medium">Reports</span>
+            </div>
+
+            <!-- Divider -->
+            <div class="border-t border-white/20 my-4"></div>
+
+            <!-- Sign Out -->
+            <div class="flex items-center gap-3 cursor-pointer px-4 py-3 rounded-md transition-all duration-200 hover:bg-white/10"
+                 ng-click="redirectFunc('Index')">
+                <i class="fa-solid fa-door-open w-5 text-center"></i>
+                <span class="text-sm font-medium">Sign Out</span>
+            </div>
+
+        </div>
+    </div>
     <div>
         @RenderBody()
     </div>

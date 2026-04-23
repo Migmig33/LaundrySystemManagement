@@ -1,0 +1,81 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutForContent.cshtml";
+}
+<div ng-init="getCustomerDetailsDataFunc(); getUserDataFunc(); currentPage = 'Customers'" class="mainContainer">
+    <div class="min-h-screen flex items-center justify-center text-white">
+        <div class="w-full max-w-[90%] p-8">
+            <h1 class="text-3xl font-bold mb-4 text-[var(--text)]">
+                Customer <span class="text-[var(--primary)]">Details</span>
+            </h1>
+            <div class="flex flex-col gap-8 mb-8">
+                <form class="flex flex-wrap p-4 border border-transparent rounded-md">
+                    <div class="flex w-1/2 flex-col p-2">
+                        <div class="flex justify-between"><label for="OrderID" class="text-sm text-[var(--text-sub)] font-bold">OrderID:</label></div>
+                        <div class="rounded-md bg-[var(--border)] border-[1.5px] border-[var(--border)] p-3 focus:outline-none  focus:border-[var(--primary)] focus:bg-[var(--bg)] text-black">
+                            {{CustomerID}}
+                        </div>
+                    </div>
+                    <div class="flex w-1/2 flex-col p-2">
+                        <div class="flex justify-between"><label for="Name" class="text-sm text-[var(--text-sub)] font-bold">Name: <span class="text-[#ff7276] text-md">*</span></label> <span class="text-[#ff7276] text-sm" ng-show="NameField">Please fill this field</span></div>
+                        <input type="text"
+                               maxlength="70"
+                               class="inputBox validate rounded-md bg-[var(--border)] border-[1.5px] border-[var(--border)] p-3 focus:outline-none  focus:border-[var(--primary)] focus:bg-[var(--bg)] text-black"
+                               ng-model="Name" />
+                    </div>
+                    <div class="flex w-1/2 flex-col p-2">
+                        <div class="flex justify-between"><label for="Quantity" class="text-sm text-[var(--text-sub)] font-bold">Contact: <span class="text-[#ff7276] text-md">*</span></label> <span class="text-[#ff7276] text-sm" ng-show="QuantityField">Please fill this field</span></div>
+                        <input type="text"
+                               class="inputBox validate  rounded-md bg-[var(--border)] border-[1.5px] border-[var(--border)] p-3 focus:outline-none  focus:border-[var(--primary)] focus:bg-[var(--bg)] text-black"
+                               maxlength="12"
+                               ng-model="Contact" required />
+
+                    </div>
+                    <div class="flex w-1/2 flex-col p-2">
+                        <div class="flex justify-between"><label for="Service" class="text-sm text-[var(--text-sub)] font-bold">Address:</label></div>
+                        <input type="text"
+                               maxlength="30"
+                               class="inputBox validate rounded-md bg-[var(--border)] border-[1.5px] border-[var(--border)] p-3 focus:outline-none focus:border-[var(--primary)] focus:bg-[var(--bg)] text-black"
+                               ng-model="Address" />
+                    </div>
+                    <div class="flex w-1/2 flex-col p-2">
+                        <div class="flex justify-between"><label for="Paid" class="text-sm text-[var(--text-sub)] font-bold">Username: <span class="text-[#ff7276] text-md">*</span></label> <span class="text-[#ff7276] text-sm" ng-show="UsernameField">Please fill this field</span></div>
+                        <input type="text"
+                               maxlength="25"
+                               class="inputBox validate rounded-md bg-[var(--border)] border-[1.5px] border-[var--border)] p-3 focus:outline-none  focus:border-[var(--primary)] focus:bg-[var(--bg)] text-black"
+                               ng-model="Username">
+                    </div>
+                    <div class="flex w-1/2 flex-col p-2">
+                        <div class="flex justify-between"><label for="Paid" class="text-sm text-[var(--text-sub)] font-bold">Password: <span class="text-[#ff7276] text-md">*</span></label> <span class="text-[#ff7276] text-sm" ng-show="PasswordField">Please fill this field</span></div>
+                        <input type="text"
+                               maxlength="25"
+                               class="inputBox validate rounded-md bg-[var(--border)] border-[1.5px] border-[var--border)] p-3 focus:outline-none  focus:border-[var(--primary)] focus:bg-[var(--bg)] text-black"
+                               ng-model="Password">
+                    </div>
+                    <div class="flex w-full flex-col p-2">
+                        <div class="flex justify-between"><label for="Paid" class="text-sm text-[var(--text-sub)] font-bold">Password: <span class="text-[#ff7276] text-md">*</span></label> <span class="text-[#ff7276] text-sm" ng-show="PasswordField">Please fill this field</span></div>
+                        <select class="inputBox validate rounded-md bg-[var(--border)] border-[1.5px] border-[var--border)] p-3 focus:outline-none  focus:border-[var(--primary)] focus:bg-[var(--bg)] text-black"
+                                ng-model="isActive"
+                                ng-options="o.value as o.label for o in Options"></select>
+                    </div>
+                </form>
+
+                <div class="flex flex-col gap-2">
+                    <input type="submit"
+                           ng-click="saveUserFunc(UserID)"
+                           value="Save"
+                           class="rounded-full bg-[var(--primary)] border border-transparent p-3 transform hover:scale-105 transistion duration-300 text-white font-bold" />
+                    <input type="submit"
+                           ng-click="deleteUserFunc(UserID)"
+                           value="Delete"
+                           class="rounded-full bg-[#FF0000] border border-transparent p-3 transform hover:scale-105 transistion duration-300 text-black font-bold" />
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
