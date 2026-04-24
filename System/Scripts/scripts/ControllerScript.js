@@ -24,6 +24,7 @@
     $scope.PriceField = false;
     hasError = false;
 
+
     //Pages
 
     $scope.Dashboard = false;
@@ -196,33 +197,33 @@
     
 
 
-    $scope.loginFunction = function () {
-        var checkLogin = $scope.userArray.find(
-            items => items.Username == $scope.loggedUsername && items.Password == $scope.loggedPassword);
-        if (checkLogin != undefined) {
-            Swal.fire({
-                title: "Success!",
-                text: "You Have Logged In!",
-                icon: "success"
-            });
-            sessionStorage.setItem("UserLoginData", JSON.stringify(checkLogin));
-            if (checkLogin?.RoleID === "admin") { $scope.redirectFunc("Dashboard"); }
-            if (checkLogin?.RoleID === "customer") { $scope.redirectFunc("Home"); }
+    //$scope.loginFunction = function () {
+    //    var checkLogin = $scope.userArray.find(
+    //        items => items.Username == $scope.loggedUsername && items.Password == $scope.loggedPassword);
+    //    if (checkLogin != undefined) {
+    //        Swal.fire({
+    //            title: "Success!",
+    //            text: "You Have Logged In!",
+    //            icon: "success"
+    //        });
+    //        sessionStorage.setItem("UserLoginData", JSON.stringify(checkLogin));
+    //        if (checkLogin?.RoleID === "admin") { $scope.redirectFunc("Dashboard"); }
+    //        if (checkLogin?.RoleID === "customer") { $scope.redirectFunc("Home"); }
         
         
-        }else {
-            Swal.fire({
-                icon: "error",
-                title: "Invalid",
-                text: "Wrong Username or Password!",
-            });
-        }
+    //    }else {
+    //        Swal.fire({
+    //            icon: "error",
+    //            title: "Invalid",
+    //            text: "Wrong Username or Password!",
+    //        });
+    //    }
 
-    }
-    $scope.getLoginDataFunc = function () {
-        var userData = sessionStorage.getItem("UserLoginData");
-        $scope.UserInfo = JSON.parse(userData);
-    }
+    //}
+    //$scope.getLoginDataFunc = function () {
+    //    var userData = sessionStorage.getItem("UserLoginData");
+    //    $scope.UserInfo = JSON.parse(userData);
+    //}
 
 
 
@@ -231,7 +232,39 @@
 
     // CONNECTED TO THE BACKEND FUNCTIONS
 
-    
+    $scope.loginFunction = function (id) {
+        if (!$scope.loggedUsername || !$scope.loggedUsername) {
+            Swal.fire({
+                icon: "error",
+                title: "Invalid",
+                text: "Please fill the Input Fields"
+            })
+        } else {
+            var loginCredentials = {
+                Username: $scope.loggedUsername,
+                Password: $scope.loggedPassword
+            };
+            var loginAuth = service.loginAuthService(loginCredentials);
+            loginAuth.then(function (response) {
+                if (response.data.success) {
+                    if (response.data.role == 1) {
+                        $scope.userDetails = response.data.data;
+                        var jsonConverted = JSON.stringify($scope.userDetails);
+                        sessionStorage.setItem("AdminDetailsData", jsonConverted);
+                        $scope.redirectFunc("Dashboard");
+
+                    } else if (response.data.role == 2) {
+                        $scope.userDetails = response.data.data;
+                        var jsonConverted = JSON.stringify($scope.userDetails);
+                        sessionStorage.setItem("UserDetailsData", jsonConverted);
+                        $scope.redirectFunc("Home")
+                    }
+                } else {
+                    alert(response.data.message);
+                }
+            })
+        }
+    }
 
     // Save Users/Customers
     $scope.saveUserFunc = function (id) {
@@ -318,7 +351,7 @@
             Swal.fire({
                 icon: "error",
                 title: "Invalid!",
-                text: "Please fill out required field"
+                text: "Please fill out required fields"
             });
         } else {
             var serviceData = {
@@ -336,6 +369,28 @@
                 });
                 $scope.showFormService = false;
 
+            })
+        }
+    }
+    $scope.saveFeedbackFunc = function (customerID, orderID, id) {
+        alert(id);
+        if (!$scope.FeedbackDesc) {
+            Swal.fire({
+                icon: "error",
+                title: "Invalid",
+                text: "Please fill out required fields"
+            })
+        } else {
+            var feedbackData = {
+                FeedbackDesc: $scope.FeedbackDesc,
+                CustomerID: customerID,
+                OrderID: orderID
+
+            }
+            console.log(feedbackData);
+            var saveFeedbackData = service.saveFeedbackService(feedbackData, id)
+                saveFeedbackData.then(function (response) {
+                alert(response.data)
             })
         }
     }
@@ -360,6 +415,14 @@
         getServicesData.then(function (returnedData) {
             $scope.servicesData = returnedData.data.data;
             
+        })
+    }
+    $scope.getFeedbackDataFunc = function () {
+        var getFeedbackData = service.getFeedbackDataService()
+        getFeedbackData.then(function (returnedData) {
+            $scope.feedbackDatas = returnedData.data;
+            $scope.FeedbackLength = $scope.feedbackDatas.length;
+            alert($scope.feedbackDatas.length);
         })
     }
 
@@ -427,6 +490,20 @@
 
     // Direct Functions
     //View
+    $scope.getUserDetails = function () {
+        var getUserDetails = sessionStorage.getItem("UserDetailsData");
+        var jsonParse = JSON.parse(getUserDetails);
+        $scope.Name = jsonParse.Name;
+        $scope.FeedbackID = jsonParse.FeedbackID || jsonParse.Order.FeedbackID;
+        $scope.UserID = jsonParse.UserID;
+        $scope.isFinished = jsonParse.Order.isFinished;
+        $scope.isPaid = jsonParse.Order.isPaid;
+        $scope.ServiceType = jsonParse.Order.ServiceType;
+        $scope.CreatedAt = jsonParse.Order.CreatedAt;
+        $scope.CustomerID = jsonParse.Order.CustomerID;
+        $scope.OrderID = jsonParse.Order.OrderID;
+        
+    }
     $scope.directCustomerDetailsFunc = function (id) {
         var customerDetailsData = $scope.userDatas.find(
             items => items.CustomerID == id
@@ -480,6 +557,7 @@
 
         ];
     }
+
     $scope.showServiceDetails = function (id) {
         alert(id);
         var serviceDetailsData = $scope.servicesData.find(

@@ -10,6 +10,7 @@ namespace LaunderTrack.Models.Tables
         public int FeedbackID { get; set; }
         public string FeedbackDesc { get; set; } = string.Empty;
         public int CustomerID { get; set; }
+        public int OrderID { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime? ModifiedAt { get; set; }
     }

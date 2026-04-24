@@ -1,12 +1,20 @@
 ﻿app.service("service", function ($http) {
 
-
+    this.loginAuthService = function (data) {
+        var response = $http({
+            url: "/SystemView/LoginAuth",
+            method: "post",
+            data: data,
+            headers: {"Content-Type": "application/json"}
+        })
+        return response;
+    }
     this.saveUserService = function (data, id) {
         var response = $http({
             url: "/SystemView/SaveCustomers",
             method: "post",
             data: {
-                user_data: data,
+                userData: data,
                 id: id
             },
             headers: { "Content-Type": "application/json" }
@@ -40,7 +48,7 @@
     }
     this.saveFeedbackService = function (data, id) {
         var response = $http({
-            url: "/SystemView/SaveFeedback",
+            url: "/SystemView/SaveFeedbacks",
             method: "post",
             data: { 
                 feedback_data: data,
@@ -89,6 +97,9 @@
     }
     this.getServicesDataService = function () {
         return $http.get("/SystemView/GetServices");
+    }
+    this.getFeedbackDataService = function () {
+        return $http.get("/SystemView/GetFeedbacks");
     }
 
 });

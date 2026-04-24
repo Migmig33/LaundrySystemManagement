@@ -91,7 +91,6 @@
         }
 
         .mainContainer {
-            margin-left: calc(25% + 20px);
             margin-top: calc(5% + 5px);
         }
 
@@ -112,11 +111,17 @@
             }
         }
     </style>
-    <nav class="fixed top-0 w-full bg-[var(--primary)] p-3 font-bold text-3xl cursor-pointer h-[10%] z-20 "
+    <nav class="fixed top-0 w-full bg-[var(--primary)] p-3 font-bold text-3xl h-[10%] z-20 "
          style="animation: SlideDown 0.5s ease-in-out; ">
-        <div class="flex">
-            <h1 class=" text-[var(--text)] transform hover:scale-105 transistion duration-300" style="animation: SlideLeft 0.8s ease-in-out" ng-click="openMenuFunc()" id="menubar">launder</h1><span class="text-[var(--bg)]" style="animation: SlideDown 2s ease-in-out">Tr<span><i class="fa-solid fa-shirt text-lg"></i></span>ck</span>
+        <div class="flex justify-between">
+            <div class="flex">
+                <h1 class=" text-[var(--text)] transform hover:scale-105 transistion duration-300" style="animation: SlideLeft 0.8s ease-in-out" ng-click="openMenuFunc()" id="menubar">launder</h1><span class="text-[var(--bg)]" style="animation: SlideDown 2s ease-in-out">Tr<span><i class="fa-solid fa-shirt text-lg"></i></span>ck</span>
+            </div>
+            <div class="flex gap-2 text-sm transform-uppercase font-light bg-[var(--bg)] p-2 rounded-full cursor-pointer " ng-show="currentPage == 'Home'" ng-click="redirectFunc('Index')">
+                <i class="fa-solid fa-door-open w-5 flex items-center justify-center"></i>
+            </div>
         </div>
+
     </nav>
     <div>
         @RenderBody()

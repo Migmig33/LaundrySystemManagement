@@ -12,7 +12,7 @@
             </div>
             <div class="flex gap-4 mt-4">
                 <div class="flex flex-col gap-4 bg-[var(--primary)]  text-white p-3 rounded-md w-1/2 boxShadow">
-                    <h1 class="text-center text-xl font-bold">Total Customer</h1>
+                    <h1 class="text-center text-xl font-bold">Customers</h1>
                     <p class="text-center text-xl font-bold" id="Customers">0</p>
                 </div>
                 <div class="flex flex-col gap-4 bg-[var(--primary)]  text-white p-3 rounded-md w-1/2 boxShadow">
@@ -26,34 +26,39 @@
             </div>
            
             <div class="rounded-tl-full rounded-tr-full p-2 bg-white mt-8 border-t-[3.5px] border-[var(--border)] text-[var(--primary)] w-[20%]">
-                <div class="flex justify-center align-center mt-2">
-                    <i class="fa-solid fa-circle-user text-3xl align-center "></i>
-                    <p ng-show="isWeb" class="text-2xl font-bold">List</p>
+                <div class="flex justify-center align-center gap-2 m-auto">
+                    <i class="fa-solid fa-circle-user w-5 flex justify-center items-center "></i>
+                    <p ng-show="!isMobile" class="text-l font-light">List</p>
                 </div>
             </div>
-            <div class="flex flex-col items-center gap-1">
-                <div class="rounded-md bg-white border border-transparent w-full">
-                    <div class="m-8">
-                        <div ng-repeat="user in userDatas" class="transform hover:scale-105 transition duration-700 cursor-pointer" ng-click="directCustomerDetailsFunc(user.CustomerID)">
-                            <div class="border-b-[2.5px] border-[var(--border)] rounded-full font-bold flex p-2">
-                                <div class="bg-[var(--border)] rounded-full text-[var(--primary)] p-4">
-                                    <i class="fa-regular fa-face-grin m-[auto]"></i>
-                                </div>
-                                <div class="flex justify-between w-full">
-                                    <div class="flex flex-col gap-1 ml-2 text-[var(--text)]">
-                                        <p class="text-xl font-small">{{user.Name}}</p>
-                                        <div class="flex gap-2" ng-show="isWeb">
-                                            <p class="text-sm text-[var(--primary)]">{{user.Address}}</p>
-                                            <p class="mb-1">•</p>
-                                            <p class="text-sm font-sm">{{user.Contact}}</p>
-                                        </div>
+            <div class="flex flex-col items-center gap-3">
+                <div class="w-full bg-white rounde-xl shadow-sm">
+                    <div class="p-6 space-y-3">
+                        <div ng-repeat="user in userDatas"
+                             class="flex items-center justify-between p-4 rounded-xl border border-gray-100
+                                     hover:shadow-md hover:-translate-y-1 transistion-all duration-300" ng-click="directCustomerDetailsFunc(user.CustomerID)">
 
-                                    </div>
-                                    <div class="flex items-center gap-3 justify-center ml-1">
-                                       
-                                    </div> 
-                                   
+                            <!--Info & icon-->
+                            <div class="flex items-center gap-3">
+                                <div class="bg-[var(--border)] text-[var(--primary)] rounded-full p-3">
+                                    <i class="fa-regular fa-face-grin w-5 h-5 flex items-center justify-center"></i>
                                 </div>
+
+                                <div class="flex flex-col">
+                                    <p class="text-base font-semibold text-[var(--text)]">
+                                        {{user.Name}}
+                                    </p>
+                                    <p class="text-sm text-gray-500">
+                                        {{user.Contact}}
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <!--Status-->
+                            <div class="px-3 py-1 rounded-full text-sm font-md
+                                     ng-class: user.isActive == 1 ? 'bg-blue-100 text-blue-700' : 'bg-gray-200 text-gray-600'">
+                                {{user.isActive == 1 ? 'Active' : 'Inactive'}}
                             </div>
                         </div>
                     </div>

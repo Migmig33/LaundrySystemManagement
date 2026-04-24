@@ -1,45 +1,67 @@
 @{
-    Layout = "~/Views/Shared/_LayoutForContent.cshtml";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
 }
-<div class="fixed w-1/4 bg-[var(--primary)] h-[100%] top-0 z-10 sideBarContainer" style="animation: SlideLeft 1s ease-in-out" id="sidebar">
-    <div class="flex flex-col  text-lg font-semibold text-[var(--bg)] m-12 ">
-        <div class="flex gap-1  cursor-pointer hover:bg-[#E3CACA] duration-700 hover:text-black mt-[20%] p-4">
-            <i class="fa-solid fa-chart-area mt-1"></i>
-            <p>Home</p>
+<div class="mainContainer" ng-init="getUserDetails(); currentPage = 'Home'">
+    <div class="min-h-screen p-4 max-w-2xl mx-auto" style="animation: FadeIn 0.6s ease-in-out">
+
+        <!-- Welcome -->
+        <div class="mb-6">
+            <p class="text-xs font-semibold uppercase tracking-widest text-[var(--muted)] mb-1">Dashboard</p>
+            <h1 class="text-2xl font-semibold text-[var(--text)]">
+                Welcome back, <span class="text-[var(--primary)]">{{Name}}</span>!
+            </h1>
+            <p class="text-sm text-[var(--text-sub)] mt-1">Here's the status of your active laundry service.</p>
         </div>
-        <div class="flex gap-1  cursor-pointer hover:bg-[#E3CACA] duration-700 hover:text-black p-4" ng-click="redirectFunc(5)">
-            <i class="fa-solid fa-door-open mt-1"></i>
-            <p ">Sign Out</p>
-        </div>
-    </div>
-</div>
-<div class=" mainContainer" ng-init="getLoginDataFunc()">
 
-    <div class="min-h-screen flex justify-content flex-col gap-4">
-        <div class="w-full max-w-[90%] p-8" style="animation: FadeIn 1s ease-in-out">
+        <!-- Active Service Card -->
+        <p class="text-xs font-semibold uppercase tracking-widest text-[var(--muted)] mb-2">Active service</p>
+        <div class="relative bg-[var(--primary)] rounded-2xl p-5 mb-5 overflow-hidden boxShadow">
+            <!-- Decorative circles -->
+            <div class="absolute -top-8 -right-8 w-28 h-28 rounded-full bg-white/10"></div>
+            <div class="absolute -bottom-5 right-8 w-16 h-16 rounded-full bg-white/5"></div>
 
-            <h1 class="text-3xl font-bold text-[var(--text)] mb-8">Welcome back <span class="text-[var(--primary)]">{{UserInfo.Name}}</span>!</h1>
-
-            <div class="flex flex-col  flex-wrap gap-4 ">
-                <div class="border-[var(--border)] bg-[var(--primary)] flex gap-4 rounded-[20px] p-[10%] m-auto boxShadow">
-                    <div class="flex flex-col gap-2">
-                        <p class="text-3xl text-[var(--bg)] font-bold">Your Service: </p>
-                        <div class="flex gap-4">
-                            <p class="text-[var(--bg)] text-xl mt-1">PickUp Ready? </p>
-                            <p class="mt-1 bg-[#FF0000] p-1 rounded-md font-semibold">Not Finished </p>
-                        </div>
-                        <div class="bg-[#28C72F] p-2 rounded-full text-center mt-4">
-                            <p class="font-semibold">Paid</p>
-                        </div>
+            <div class="relative flex justify-between items-start">
+                <div>
+                    <p class="text-xs font-semibold uppercase tracking-widest text-white/60 mb-1">Laundry</p>
+                    <p class="text-xl font-semibold text-white mb-4">{{ServiceType}}</p>
+                    <div class="flex gap-2 flex-wrap">
+                        <span class="text-xs font-medium px-3 py-1 rounded-full" ng-class="{'bg-red-500/20 text-red-200 border border-red-400/30': isFinished == 0, 'bg-blue-500/20 text-blue-200 border border-blue-400/30': isFinished == 1}">
+                            {{isFinished == 1 ? 'Ready for Pickup' : 'Not Finish'}}
+                        </span>
+                        <span class="text-xs font-medium px-3 py-1 rounded-full" ng-class="{'bg-green-500/20 text-green-200 border border-green-400/30': isPaid == 1, 'bg-red-500/20 text-red-200 border border-red-400/30': isPaid == 0}">
+                            {{isPaid == 1 ? 'Paid' : 'Unpaid'}}
+                        </span>
                     </div>
-
-                    <p class="text-2xl text-white font-bold mt-1">Full-Service</p>
-
-
+                </div>
+                <div class="bg-white/10 rounded-xl p-3">
+                    <i class="fa-solid fa-shirt text-white text-2xl"></i>
                 </div>
             </div>
+
+         
         </div>
 
+      
+        <p class="text-xs font-semibold uppercase tracking-widest text-[var(--muted)] mb-2">Leave feedback</p>
+        <div class="bg-white border border-[var(--border)] rounded-2xl p-5">
+            <p class="text-base font-semibold text-[var(--text)] mb-1">How was your experience?</p>
+            <p class="text-sm text-[var(--text-sub)] mb-4">Your feedback helps us improve our service.</p>
+
+           
+            <textarea ng-model="FeedbackDesc"
+                      placeholder="Share your thoughts about our service..."
+                      maxlength="300"
+                      class="w-full border border-[var(--border)] rounded-xl p-3 text-sm text-[var(--text)] bg-[var(--bg)] resize-none min-h-[90px] focus:outline-none focus:border-[var(--primary)] focus:ring-2 focus:ring-[var(--primary)]/20 transition-all">
+      </textarea>
+            <p class="text-xs text-[var(--muted)] text-right mt-1">
+                {{FeedbackDesc.length || 0}} / 300
+            </p>
+
+            <button ng-click="saveFeedbackFunc(CustomerID, OrderID, FeedbackID)"
+                    class="w-full mt-3 bg-[var(--primary)] hover:bg-[var(--primary-dark)] text-white font-semibold py-3 rounded-full transition-all duration-200 active:scale-95">
+                Submit Feedback
+            </button>
+        </div>
 
     </div>
 </div>

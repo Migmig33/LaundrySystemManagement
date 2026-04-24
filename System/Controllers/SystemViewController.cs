@@ -2,6 +2,7 @@
 using LaunderTrack.Models.Tables;
 using Microsoft.Ajax.Utilities;
 using Newtonsoft.Json;
+using Org.BouncyCastle.Asn1.X509;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ using System.Web.Helpers;
 using System.Web.Mvc;
 using System.Web.Razor.Generator;
 using System.Web.Security;
+using System.Web.Services.Description;
 using System.Xml.Linq;
 
 namespace LaunderTrack.Controllers
@@ -61,8 +63,69 @@ namespace LaunderTrack.Controllers
         {
             return View();
         }
+
+        //LOGIN API
+        public JsonResult LoginAuth(Users data)
+        {
+            try
+            {
+                using(var connect = new DB_Context())
+                {
+                    var checkAuth = connect.tbl_users.FirstOrDefault(x =>
+                    x.Username == data.Username &&
+                    x.Password == data.Password
+                    );
+                    var customerID = connect.tbl_customers.FirstOrDefault(x => x.UserID == checkAuth.UserID);
+                    System.Diagnostics.Debug.WriteLine("Data is + " + customerID.CustomerID);
+                    var customerData = (from order in connect.tbl_orders
+                                        where order.CustomerID == customerID.CustomerID
+
+                                        join service in connect.tbl_services on order.ServiceTypeID equals service.ServiceTypeID
+                                        join feedback in connect.tbl_feedbacks on order.OrderID equals feedback.OrderID into fb
+                                        from feedback in fb.DefaultIfEmpty()
+
+                                        select new
+                                        {
+                                            order.OrderID,
+                                            order.CustomerID,
+                                            order.isFinished,
+                                            order.isPaid,
+                                            service.ServiceType,
+                                            FeedbackDesc = feedback != null ? feedback.FeedbackDesc : (string)null,
+                                            FeedbackID = feedback != null ? feedback.FeedbackID : (int?)null,
+
+                                        }
+                                        ).FirstOrDefault();
+                    var userData = new
+                    {
+                        customerID.CustomerID,
+                        checkAuth.Name,
+                        checkAuth.UserID,
+                        Order = customerData
+                    };
+                    if(checkAuth != null)
+                    {
+                        if(checkAuth.RoleID == 1)
+                        {
+                            return Json(new { success = true, role = 1, data = userData, message = "Logged as Admin" }, JsonRequestBehavior.AllowGet);
+                        }
+                        else
+                        {
+                            return Json(new { success = true, role = 2, data = userData, message = "Logged as Customer" }, JsonRequestBehavior.AllowGet);
+                        }
+                    }
+                    else
+                    {
+                        return Json(new { success = false, message = "User Not Found" }, JsonRequestBehavior.AllowGet);
+                    }
+                }
+            }catch(Exception ex)
+            {
+                return Json(new { success = false, message = ErrorHandling(ex) }, JsonRequestBehavior.AllowGet);
+            }
+        }
        
-        // POST API
+        // SAVE API
         public string SaveCustomers(Users user_data, int? id)
         {
         
@@ -220,8 +283,9 @@ namespace LaunderTrack.Controllers
                         {
                             CustomerID = feedback_data.CustomerID,
                             FeedbackDesc = feedback_data.FeedbackDesc,
-                            CreatedAt = feedback_data.CreatedAt,
-                            ModifiedAt = feedback_data.ModifiedAt
+                            OrderID = feedback_data.OrderID,
+                            CreatedAt = DateTime.Now,
+                            ModifiedAt = DateTime.Now
                         };
                         connect.tbl_feedbacks.Add(newFeedback);
                         connect.SaveChanges();
@@ -229,9 +293,8 @@ namespace LaunderTrack.Controllers
                     else
                     {
                         // if index is not null update
-                        getDataIndex.CustomerID = feedback_data.CustomerID;
                         getDataIndex.FeedbackDesc = feedback_data.FeedbackDesc;
-                        getDataIndex.ModifiedAt = feedback_data.ModifiedAt;
+                        getDataIndex.ModifiedAt = DateTime.Now;
                         connect.SaveChanges();
                     }
                 }
@@ -424,6 +487,51 @@ namespace LaunderTrack.Controllers
             {
                 string error = ErrorHandling(ex);
                 return Json(new { success = false, message = error }, JsonRequestBehavior.AllowGet);
+            }
+        }
+        public JsonResult GetFeedbacks()
+        {
+            try
+            {
+                using(var connect = new DB_Context())
+                {
+                    var raw = (from user in connect.tbl_users
+                               join customer in connect.tbl_customers on user.UserID equals customer.UserID
+                               join order in connect.tbl_orders on customer.CustomerID equals order.OrderID
+                               join service in connect.tbl_services on order.ServiceTypeID equals service.ServiceTypeID
+                               join feedback in connect.tbl_feedbacks on order.OrderID equals feedback.FeedbackID
+                               orderby feedback.CreatedAt descending
+                               select new
+                               {
+                                   FeedbackID = feedback.FeedbackID,
+                                   CustomerID = customer.CustomerID,
+                                   OrderID = order.OrderID,
+                                   Name = user.Name,
+                                   ServiceType = service.ServiceType,
+                                   Price = order.Quantity * service.Price,
+                                   FeedbackDesc = feedback.FeedbackDesc,
+                                   isFinished = order.isFinished,
+                                   CreatedAt = feedback.CreatedAt
+
+                               }
+                               ).ToList();
+                    var data = raw.Select(s => new
+                    {
+                        FeedbackID = s.FeedbackID,
+                        CustomerID = s.CustomerID,
+                        OrderID = s.OrderID,
+                        Name = s.Name,
+                        ServiceType = s.ServiceType,
+                        Price = s.Price,
+                        isFinished = s.isFinished,
+                        FeedbackDesc = s.FeedbackDesc,
+                        CreatedAt = s.CreatedAt.ToString("yyyy-MM-dd HH:mm:ss")
+                    }).ToList();
+                    return Json(data, JsonRequestBehavior.AllowGet);
+                }
+            }catch(Exception ex)
+            {
+                return Json(ErrorHandling(ex), JsonRequestBehavior.AllowGet);
             }
         }
         public string ErrorHandling(Exception ex)

@@ -55,9 +55,9 @@
                 </div>
             </div>
             <div class="rounded-tl-full rounded-tr-full p-2 bg-white border-t-[3.5px] border-[var(--border)] text-[var(--primary)] w-[20%]">
-                <div class="flex justify-center align-center mt-2">
-                    <i class="fa-solid fa-circle-user text-3xl align-center "></i>
-                    <p ng-show="isWeb" class="text-2xl font-bold">List</p>
+                <div class="flex justify-center align-center m-auto gap-2">
+                    <i class="fa-solid fa-basket-shopping w-5 flex items-center justify-center"></i>
+                    <p ng-show="!isMobile" class="text-l font-light">List</p>
                 </div>
             </div>
             <div class="flex flex-col items-center gap-1">
@@ -66,7 +66,8 @@
                         <div ng-repeat="orders in ordersData track by orders.OrderID" class="transform hover:scale-105 transition duration-700 cursor-pointer">
                             <div class="border-b-[2.5px] border-[var(--border)] rounded-full font-bold flex p-2" ng-click="directOrderDetailsFunc(orders.OrderID)">
                                 <div class="bg-[var(--border)] rounded-full text-[var(--primary)] p-4">
-                                    <i class="fa-regular fa-face-grin m-[auto]"></i>
+                                    <i class="fa-solid fa-basket-shopping w-5 text-center"></i>
+
                                 </div>
                                 <div class="flex justify-between w-full">
                                     <div class="flex flex-col gap-1 ml-2 text-[var(--text)]">
